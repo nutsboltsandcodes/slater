@@ -12,13 +12,11 @@
 ?><!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="icon" href="favicon.ico">
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i" rel="stylesheet">
-
-<?php wp_head(); ?>
+  <meta charset="<?php bloginfo( 'charset' ); ?>">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="profile" href="http://gmpg.org/xfn/11">
+  <link rel="icon" href="favicon.ico">
+  <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -28,22 +26,22 @@
 	<header id="masthead" role="banner">
 
     <!-- navigation container - toggable -->
-    <div class="top-nav__container">
+    <div class="top-nav top-nav__container">
       
       <!-- Logo -->
-      <a href="#" class="top-nav__logo"><img alt="Logo" src="http://nutsboltsandcodes.com/wp-content/uploads/2017/06/logo.png"></a>
+      <?php get_template_part( 'template-parts/logo' ); ?>
       <!-- Mobile Menu Toggle -->
       <span id="top-nav__toggle" class="top-nav__toggle"></span>
 
-      <nav class="top-nav__nav" role="navigation">
-        <!-- nav links -->
-        <ul class="top-nav__ul">
-          <li><a class="top-nav__a" href="#">Home</a></li>
-          <li><a class="top-nav__a" href="#">Tutorials</a></li>
-          <li><a class="top-nav__a" href="#">Portfolio</a></li>
-          <li><a class="top-nav__a" href="#">Thoughts</a></li>
-        </ul><!-- /nav links -->
-      </nav>
+      <?php 
+        wp_nav_menu(
+          array(
+            'menu' => 'header',
+            'container' => 'nav', 
+            'container_class' => 'top-nav__nav',
+            'menu_class' => 'top-nav__ul', 
+        ));
+      ?>
       
     </div><!-- /navigation container - toggable -->
 

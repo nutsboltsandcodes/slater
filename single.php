@@ -12,19 +12,8 @@ get_header(); ?>
 		<?php
 		while ( have_posts() ) : the_post(); ?>
 
-			<div class="hero">
-	      <div class="hero__text-container">
-	        <h1 class="hero__text-title"><?php the_title(); ?></h1>
-	        <p class="hero__text-subtitle">So begins my web development journey begins my web development.</p>
-	        <p class="hero__text-meta">Time: 4 minutes</p>
-	      </div>
-	      <div class="hero__image-container">
-	        <?php // Check if the post has a Post Thumbnail assigned to it.
-					if ( has_post_thumbnail() ) {
-					    the_post_thumbnail();
-					} ?>
-	      </div>
-	    </div>
+      <!-- Hero Image and Title -->
+      <?php get_template_part( 'template-parts/post', 'hero' );?>
 
 	    <div class="container center-block">
 
@@ -32,17 +21,12 @@ get_header(); ?>
 
         <div class="article__meta">
           
-          <small class="article__meta-date">Tags</small>
           <!-- Post tags -->
-          <span class="article__meta-tags">
-            <a href="#" rel="tag">Workflow</a>
-            <a href="#" rel="tag">PostCSS</a>
-            <a href="#" rel="tag">VidCon 2017</a>
-            <a href="#" rel="tag">Snippet</a>
-            <a href="#" rel="tag">WordPress</a>
-          </span>
+          <?php get_template_part( 'template-parts/post', 'tags' );?>
+          
           <!-- Post/Update date -->
-          <small class="article__meta-date">Updated on: 06 June 2017</small>
+          <?php get_template_part( 'template-parts/post', 'date' );?>
+
         </div>
 
         <div class="article__content">
@@ -52,28 +36,21 @@ get_header(); ?>
         </div><!-- /article content -->
 
         <div class="article__meta">
-          
-          <small class="article__meta-cat">Categories</small>
-          <!-- Post tags -->
-          <span class="article__meta-tags">
-            <a href="#" rel="tag">Workflow</a>
-            <a href="#" rel="tag">PostCSS</a>
-            <a href="#" rel="tag">VidCon 2017</a>
-            <a href="#" rel="tag">Snippet</a>
-            <a href="#" rel="tag">WordPress</a>
-          </span>
+
+          <!-- Post Categories -->
+          <?php get_template_part( 'template-parts/post', 'cat' );?>          
       
         </div>
 
       </article>
 
+      <?php // If comments are open or we have at least one comment, load up the comment template.
+      if ( comments_open() || get_comments_number() ) :
+        comments_template();
+      endif; ?>
+
     </div>
 		
-		<?php 
-		endwhile; // End of the loop.
-		?>
+		<?php endwhile; // End of the loop.?>
 
-
-<?php
-get_sidebar();
-get_footer();
+<?php get_footer(); ?>

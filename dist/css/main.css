@@ -845,7 +845,7 @@ a:active {
 
 /* Blockquote styles */
 
-blockquote {
+blockquote p {
 	border-left: 10px solid #068D9D;
 	font-family: Roboto, sans-serif;
 	padding: 1.5rem 1.5rem;
@@ -859,19 +859,19 @@ blockquote {
 
 @media (min-width: 600px) {
 
-blockquote {
+blockquote p {
 		font-size: 1.25rem
 }
 	}
 
 @media (min-width: 800px) {
 
-blockquote {
+blockquote p {
 		font-size: 1.5rem
 }
 	}
 
-blockquote cite {
+blockquote p cite {
 		display: block;
 		margin-top: 2rem;
 		font-size: 1rem;
@@ -880,19 +880,19 @@ blockquote cite {
 
 @media (min-width: 600px) {
 
-blockquote cite {
+blockquote p cite {
 			font-size: 1.125rem
 	}
 	}
 
 @media (min-width: 800px) {
 
-blockquote cite {
+blockquote p cite {
 			font-size: 1.25rem
 	}
 	}
 
-blockquote mark {
+blockquote p mark {
 		background-color: #7FB3D5;
 	}
 
@@ -1371,7 +1371,7 @@ header {
 		}
 	}
 
-.top-nav__logo img {
+.top-nav .custom-logo-link img {
 			display: block;
 			max-width: 100px;
 			margin-left: auto;
@@ -1380,7 +1380,7 @@ header {
 
 @media (min-width: 600px) {
 
-.top-nav__logo img {
+.top-nav .custom-logo-link img {
 				max-height: 55px;
 				width: auto;
 				display: inline-block;
@@ -1444,30 +1444,30 @@ header {
 			}
 	}
 
-.top-nav__a {
-			text-decoration: none;
-			color: #fff;
-			font-family: inherit;
-			font-size: 1.5rem;
-			font-weight: 500;
-		}
+.top-nav__ul li a {
+					text-decoration: none;
+					color: #fff;
+					font-family: inherit;
+					font-size: 1.5rem;
+					font-weight: 500;
+				}
 
 @media (min-width: 600px) {
 
-.top-nav__a {
-				font-size: 1.25rem
-		}
+.top-nav__ul li a {
+						font-size: 1.25rem
+				}
 	}
 
 @media (min-width: 800px) {
 
-.top-nav__a {
-				font-size: 1.5rem
-		}
+.top-nav__ul li a {
+						font-size: 1.5rem
+				}
 	}
 
-.top-nav__a:hover {
-			color: #169B93;
-			position: relative;
-			text-decoration: none;
-		}
+.top-nav__ul li a:hover {
+					color: #169B93;
+					position: relative;
+					text-decoration: none;
+				}

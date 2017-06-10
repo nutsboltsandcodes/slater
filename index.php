@@ -16,15 +16,13 @@
 
 <?php get_header(); ?>
 	
-	<?php //Hero Image ?>
-	<div class="hero">
-    <div class="hero__image-container">
-      <?php // Check if the post has a Post Thumbnail assigned to it.
-			if ( has_post_thumbnail() ) {
-			    the_post_thumbnail();
-			} ?>
-    </div>
-  </div>
+	<?php 
+	
+	//Hero Image 
+	get_template_part( 'template-parts/page', 'hero');
+
+	?>
+	
 
 
 <?php

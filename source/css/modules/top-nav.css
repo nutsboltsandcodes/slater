@@ -46,7 +46,7 @@ header {
 
 		}
 
-		&__logo img {
+		& .custom-logo-link img {
 			display: block;
 			max-width: 100px;
 			margin-left: auto;
@@ -104,29 +104,28 @@ header {
 					font-size: 2.0rem;
 					padding: 15px 10px;
 				}
+			
+				& a {
+					text-decoration: none;
+					color: #fff;
+					font-family: inherit;
+					font-size: 1.5rem;
+					font-weight: 500;
+
+					@mixin atMedium {
+						font-size: 1.25rem;
+					}
+
+					@mixin atDesktop {
+						font-size: 1.5rem;
+					}
+				}
+				
+				& a:hover {
+					color: #169B93;
+					position: relative;
+					text-decoration: none;
+				}
 			}
 		}
-
-		&__a {
-			text-decoration: none;
-			color: #fff;
-			font-family: inherit;
-			font-size: 1.5rem;
-			font-weight: 500;
-
-			@mixin atMedium {
-				font-size: 1.25rem;
-			}
-
-			@mixin atDesktop {
-				font-size: 1.5rem;
-			}
-		}
-
-		&__a:hover {
-			color: #169B93;
-			position: relative;
-			text-decoration: none;
-		}
-
 }

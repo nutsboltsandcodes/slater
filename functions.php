@@ -44,8 +44,21 @@ function slater_setup() {
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'slater' ),
+		'header-menu' => esc_html__( 'Header', 'slater'),
 	) );
+
+	/*
+	* Enable support for Custom Logo in headers
+	*
+	* @link https://developer.wordpress.org/themes/functionality/custom-logo/
+	*/
+	add_theme_support( 'custom-logo', array(
+	'height'      => auto,
+	'width'       => 100,
+	'flex-height' => false,
+	'flex-width'  => false,
+	'header-text' => array( 'site-title', 'site-description' ),
+) );
 
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -61,7 +74,7 @@ function slater_setup() {
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'slater_custom_background_args', array(
-		'default-color' => 'ffffff',
+		'default-color' => 'e5e7e9',
 		'default-image' => '',
 	) ) );
 
@@ -129,6 +142,16 @@ function slater_scripts() {
 add_action( 'wp_enqueue_scripts', 'slater_scripts' );
 
 /**
+ * Enqueue Google Fonts
+ */
+ 
+function google_fonts() {
+				wp_register_style( 'Roboto', '//fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i' );
+				wp_enqueue_style( 'Roboto' );
+		}
+add_action( 'wp_print_styles', 'google_fonts' );
+
+/**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
 function slater_pingback_header() {
@@ -162,3 +185,12 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Modify Admin Footer Text
+ */
+ 
+function modify_footer() {
+	echo 'Created with love by <a href="mailto:wyatt.castaneda@gmail.com">Wyatt</a> :).';
+}
+add_filter( 'admin_footer_text', 'modify_footer' );
