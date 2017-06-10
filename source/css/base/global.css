@@ -1,0 +1,37 @@
+/* Reset the box sizing model for all elements */
+
+html {
+	box-sizing: border-box;
+}
+
+*, *::before, *::after {
+	box-sizing: inherit;
+}
+
+body {
+	background-color: $bg-color;
+	font-family: $font-family;
+	line-height: $line-height-default;
+}
+
+/* Reset various properties */
+
+address {
+	font-style: normal;
+}
+
+figure {
+	margin: 0;
+}
+
+*::selection {
+	background-color: #7FB3D5;
+}
+
+/* Global image styles */
+
+img {
+	max-width: 100%;
+	filter: darken(10%);
+}
+

@@ -1,0 +1,18 @@
+.footer {
+	min-height: 300px;
+	width: 100%;
+	margin-top: 100px;
+	margin-bottom: 0;
+	padding-bottom: 0;
+	background: #FBFCFC;
+
+	&__blurb {
+		padding: 20px 25px 20px 25px;
+		margin: 0;
+	}
+
+	&__social {
+		
+	}
+	
+}

@@ -1,0 +1,98 @@
+.hero {
+	padding-top: 70px;
+
+	@mixin atMedium {
+		width: 100%;
+		margin: 0 0 50px 0;
+		padding-top: 0;
+		position: relative;
+		overflow-y: hidden;
+	}
+
+	&__text-container {
+		position: absolute;
+		z-index: 2;
+		top: 25%;
+		left: 0;
+		right: 0;
+		margin-right: auto;
+		margin-left: auto;
+		width: 700px;
+		max-width: 90%;
+		display: block;
+
+		@mixin atMedium {
+			border-left: solid 10px #fff;
+			padding-left: 10px;
+			top: 40%;
+		}
+
+		@mixin atDesktop {
+			top: 50%;
+		}
+	}
+
+	&__text-title {
+		text-align: center;
+		font-size: 1.4rem;
+		color: #FDFEFE;
+		font-weight: bold;
+		margin: 0;
+		padding: 8px 0;
+
+		@mixin atMedium {
+			font-size: 1.5rem;
+			font-weight: bolder;
+			text-align: left;
+			padding: 0;
+		}
+
+		@mixin atDesktop {
+			font-size: 2.1rem;
+			font-weight: bolder;
+		}
+	}
+
+	&__text-subtitle {
+		font-size: 1rem;
+		color: #FDFEFE;
+		text-align: center;
+		margin: 0;
+		padding: 8px 0;
+
+		@mixin atMedium {
+			font-size: 1.2rem;
+			text-align: left;
+			padding: 0;
+		}
+	}
+
+	&__text-meta {
+		text-align: center;
+		font-size: .85rem;
+		margin: 0;
+		color: #FDFEFE;
+		font-style: italic;
+
+		@mixin atMedium {
+			font-size: 1.0rem;
+			text-align: left;
+		}
+	}
+
+	&__image-container {
+		width: 100%;
+		max-height: 550px;
+		overflow-y: hidden;
+		filter: brightness(.5);
+
+		@mixin atMedium {
+			max-height: 550px;
+		}
+
+		& img {
+			width: 100%;
+		}
+	}
+}
+

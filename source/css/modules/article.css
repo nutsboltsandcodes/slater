@@ -1,0 +1,75 @@
+.article {
+		background: #FBFCFC;
+		padding: 20px 25px;
+		position: relative;
+		margin-top: 5px;
+		transition: margin-top .75s linear;
+
+	@mixin atMedium {
+		margin-top: -100px;
+	}
+	
+	&__meta {
+		text-align: center;
+
+		&-date {
+			display: block;
+			color: #CACFD2;
+		}
+
+		&-tags {
+			margin: 0 0 10px 0;
+			padding: 0;
+			display: inline-block;
+			width: 800px;
+			max-width: 90%;
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		&-tags a {
+			display: inline-block;
+			margin: .2em;
+			padding: .4em;
+			font-size: .6rem;
+			border-radius: 30px;
+			border: solid 1px #20B2AA;
+			text-decoration: none;
+			background-color: transparent;
+
+			@mixin atMedium {
+				font-size: .75rem;
+				padding: .4em;
+			}
+		}
+
+		&-tags a:hover {
+			color: #fff;
+			background-color: #20b2AA;
+		}
+
+		&-cat {
+			display: block;
+			color: #CACFD2;
+		}
+	}
+	
+	& img {
+		width: 100% !important;
+		max-width: 100%;
+		height: auto !important;
+	}
+
+	& .extend {
+		max-width: 100%;
+
+		@mixin atMedium {
+			max-width: 122% !important;
+			height: auto !important;
+			position: relative;
+			right: 75px;
+			box-shadow: 0 2px 15px grey;
+		}
+	}
+
+}

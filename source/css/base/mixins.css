@@ -1,0 +1,19 @@
+@define-mixin atMedium {
+	@media (min-width: $mobile-breakpoint) {
+		@mixin-content;
+	}
+}
+
+@define-mixin atDesktop {
+	@media (min-width: $desktop-breakpoint) {
+		@mixin-content;
+	}
+}
+
+@define-mixin clearfix {
+	&::after, &::before {
+		content: "";
+		clear: both;
+		display: table;
+	}
+}

@@ -1,0 +1,19 @@
+.container {
+	width: $container-default;
+	max-width: $max-container-width;
+
+	&--small {
+		width: $container-small;
+		max-width: $max-container-width;
+	}
+
+	&--large {
+		width: $container-large;
+		max-width: $max-container-width;
+	}
+
+	&--fluid {
+		width: 100%;
+		max-width: 100%;
+	}
+}

@@ -1,0 +1,21 @@
+.social-sidebar {
+	display: none;
+	position: absolute;
+	top: 575px;
+	right: 475px;
+	text-align: center;
+
+	&__title {
+		display: block;
+		color: grey;
+	}
+
+	&__link img {
+		width: 32px;
+		height: auto;
+	}
+
+	&__link img:hover {
+		filter: hue-rotate(22deg);
+	}
+}

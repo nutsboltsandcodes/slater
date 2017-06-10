@@ -1,0 +1,51 @@
+/* Variable.css */
+
+/* Background Color */
+
+$bg-color: #E5E7E9;
+
+/* Breakpoints */
+
+$mobile-breakpoint: 600px;
+$desktop-breakpoint: 800px;
+
+/* 
+* Typography 
+*/
+
+/* Links */
+
+$link-color: #20B2AA;
+$link-hover-color: #0F6662;
+
+/* Font Styles */
+$font-family: Roboto, sans-serif;
+$font-color: #424949;
+$muted-color: #CACFD2;
+
+/* Line Hieghts */
+
+$line-height-big: 1.6em;
+$line-height-default: 1.5em;
+$line-height-small: 1.2em;
+$h1-line-hieght: 1.4em;
+
+/* Font Sizes - Headlines */
+
+$para-font-size: 1.2rem; 
+$h1-font-size-mobile: 1.5rem;
+$h1-font-size-medium: 2.0rem;
+$h1-font-size-desktop: 2.1rem;
+
+/* Blockquote Styles */
+
+$bq-border: 10px;
+
+/* Container Styles */
+
+$container-large: 900px;
+$container-default: 700px;
+$container-small: 500px;
+$max-container-width: 95%;
+
+$padding: 1rem;

@@ -1,0 +1,121 @@
+/* Headline styles */
+
+h1, h2, h3, h4, h5, h6 {
+	font-weight: 500;
+	color: $font-color;	
+}
+
+h1 {
+	font-size: $h1-font-size-mobile;
+	line-height: $h1-line-hieght;
+	margin: .25em 0; 
+
+	@mixin atMedium {
+		font-size: $h1-font-size-medium;
+	}
+
+	@mixin atDesktop {
+		font-size: $h1-font-size-desktop;
+	}
+}
+
+/* Paragraph styles */
+
+p {
+	font-weight: 100;
+	line-height: $line-height-default;
+	color: $font-color;
+	font-size: $para-font-size;
+
+	@mixin atMedium {
+		font-size: $para-font-size;
+	}
+}
+
+/* Link styles */
+
+a {
+	font-size: $para-font-size;
+	color: $link-color;
+
+	&:hover, &:focus {
+		color: $link-hover-color;
+		text-decoration: underline;
+	}
+
+	&:active {
+		color: $link-hover-color;
+	}
+}
+
+/* Blockquote styles */
+
+blockquote {
+	border-left: $bq-border solid #068D9D;
+	font-family: $font-family;
+	padding: 1.5rem 1.5rem;
+	background: #EAF2F8;
+	line-height: $line-height-big;
+	font-style: italic;
+	font-size: 1.0rem;
+	font-weight: 300;
+	margin: 1.5rem 0;
+
+	@mixin atMedium {
+		font-size: 1.25rem;
+	}
+
+	@mixin atDesktop {
+		font-size: 1.5rem;
+	}
+
+	cite {
+		display: block;
+		margin-top: 2rem;
+		font-size: 1rem;
+		text-align: right;
+
+		@mixin atMedium {
+			font-size: 1.125rem;
+		}
+
+		@mixin atDesktop {
+			font-size: 1.25rem;
+		}
+	}
+
+	& mark {
+		background-color: #7FB3D5;
+	}
+}
+
+/* Keyboard Input styles */
+
+kbd {
+  background-color: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(0,0,0,.2), inset 0 0 0 2px #fff;
+  color: #333;
+  display: inline-block;
+  font-family: Helvetica,Arial,sans-serif;
+  font-size: 13px;
+  line-height: 1.4;
+  margin: 0 .1em;
+  padding: .1em .6em;
+  text-shadow: 0 1px 0 #fff
+}
+
+/* Code styles */
+
+tt, code, kbd, samp {
+    font-family: monospace;
+}
+
+pre code {
+	display: block;
+  padding: 1rem;
+  overflow: auto;
+  background-color: #333;
+  box-shadow: 2px 3px 20px rgba(0,0,0,.1);
+}
