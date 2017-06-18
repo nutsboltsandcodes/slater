@@ -29,7 +29,7 @@
     <div class="top-nav top-nav__container">
       
       <!-- Logo -->
-      <?php get_template_part( 'template-parts/logo' ); ?>
+      <a href="<?php bloginfo('url'); ?>" class="top-nav__logo"><img alt="<?php bloginfo('title'); ?>" src="<?php echo get_template_directory_uri(); ?>/images/logo.PNG"></a>
       <!-- Mobile Menu Toggle -->
       <span id="top-nav__toggle" class="top-nav__toggle"></span>
 

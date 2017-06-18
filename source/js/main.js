@@ -1,6 +1,7 @@
 window.onload = function checkScroll() {
 	headerOnScroll();
 	comments();
+	nav();
 }
 
 window.onresize = function refreshHeader() {
@@ -10,12 +11,6 @@ window.onresize = function refreshHeader() {
 window.onscroll = function() {
 	headerOnScroll();
 };
-
-
-
-var sidebar = document.getElementsByTagName('aside')[0];
-
-
 
 function headerOnScroll() {
 
@@ -48,13 +43,16 @@ function headerOnScroll() {
 }
 
 
-var toggle 	= document.getElementById('top-nav__toggle'), 
-		nav 		= document.getElementsByTagName('nav')[0];
+function nav() {
 
-toggle.onclick = function() {
-	nav.style.visibility = "visible";
-	nav.style.display 	 = "block";
-	toggle.style.backgroundImage	= 'url("./dist/css/menu_close.png")';
+	var toggle 	= document.getElementById('top-nav__toggle'), 
+			nav 		= document.getElementsByTagName('nav')[0];
+
+	toggle.onclick = function() {
+		nav.style.visibility = "visible";
+		nav.style.display 	 = "block";
+		toggle.style.backgroundImage	= 'url("./dist/css/menu_close.png")';
+	}
 }
 
 var comments_toggle = document.getElementById('comments__outer-container'),

@@ -1159,7 +1159,7 @@ select {
 .hero__text-container {
 		position: absolute;
 		z-index: 2;
-		top: 25%;
+		top: 20%;
 		left: 0;
 		right: 0;
 		margin-right: auto;
@@ -1261,6 +1261,7 @@ select {
 
 .hero__image-container img {
 			width: 100%;
+			height: auto !important;
 		}
 
 /* Table Styles */
@@ -1371,7 +1372,7 @@ header {
 		}
 	}
 
-.top-nav .custom-logo-link img {
+.top-nav__logo img {
 			display: block;
 			max-width: 100px;
 			margin-left: auto;
@@ -1380,7 +1381,7 @@ header {
 
 @media (min-width: 600px) {
 
-.top-nav .custom-logo-link img {
+.top-nav__logo img {
 				max-height: 55px;
 				width: auto;
 				display: inline-block;

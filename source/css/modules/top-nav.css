@@ -46,7 +46,7 @@ header {
 
 		}
 
-		& .custom-logo-link img {
+		&__logo img {
 			display: block;
 			max-width: 100px;
 			margin-left: auto;

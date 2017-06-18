@@ -48,19 +48,6 @@ function slater_setup() {
 	) );
 
 	/*
-	* Enable support for Custom Logo in headers
-	*
-	* @link https://developer.wordpress.org/themes/functionality/custom-logo/
-	*/
-	add_theme_support( 'custom-logo', array(
-	'height'      => auto,
-	'width'       => 100,
-	'flex-height' => false,
-	'flex-width'  => false,
-	'header-text' => array( 'site-title', 'site-description' ),
-) );
-
-	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
 	 */
