@@ -20,76 +20,87 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments" class="comments-area">
+<section class="container--100 center-block">
+	  <div id="comments__outer-container" class="comments__outer-container">
+	    <div class="comments__title-container">
 
-	<?php
-	// You can start editing here -- including this comment!
-	if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			<?php
+			<?php if ( have_comments() ) { 
+				//Get the number of comments
 				$comment_count = get_comments_number();
-				if ( 1 === $comment_count ) {
-					printf(
-						/* translators: 1: title. */
-						esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'slater' ),
-						'<span>' . get_the_title() . '</span>'
-					);
-				} else {
-					printf( // WPCS: XSS OK.
-						/* translators: 1: comment count number, 2: title. */
-						esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $comment_count, 'comments title', 'slater' ) ),
-						number_format_i18n( $comment_count ),
-						'<span>' . get_the_title() . '</span>'
-					);
-				}
-			?>
-		</h2><!-- .comments-title -->
+			?>	    			
+	    	
+	    	<h2 class="comments__title">Comments &middot; <span class="comments__title-count"><?php echo $comment_count; ?></span></h2>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'slater' ); ?></h2>
-			<div class="nav-links">
+	    	<span id="comments__title-toggle" class="comments__title-toggle"></span>
+	    </div>
+	    <div id="comments__inner-container" class="comments__inner-container">
+	      <?php //Comment Form ?>
+	      <h2>Join the Discussion.</h2>
+	      <p class="muted no-margin">Your infomation will never be published or sold.</p>
+	      <p class="muted no-margin">All comments must be approved before they will be displayed.</p>
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'slater' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'slater' ) ); ?></div>
+	      <ul class="comment-list">
+		      <?php
+		        wp_list_comments( array(
+		          'style'      => 'li',
+		          'short_ping' => true,
+		        ) );
+		      ?>
+		    </ul><!-- .comment-list -->
 
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-above -->
-		<?php endif; // Check for comment navigation. ?>
+	    	<?php $comments_args = array(
+  
+				        // change the title of send button 
+				        'label_submit'=>'Submit',
+				        // change the title of the reply section
+				        'title_reply'=>'',
+				        // remove "Text or HTML to be displayed after the set of comment fields"
+				        'comment_notes_after' => '',
+				        // redefine your own textarea (the comment body)
+				        'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label><textarea id="comment" name="comment" aria-required="true"></textarea></p>',
+				);
 
-		<ol class="comment-list">
-			<?php
-				wp_list_comments( array(
-					'style'      => 'ol',
-					'short_ping' => true,
-				) );
-			?>
-		</ol><!-- .comment-list -->
+				comment_form($comments_args);	?>
 
-		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
-		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
-			<h2 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'slater' ); ?></h2>
-			<div class="nav-links">
+				</div>
 
-				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'slater' ) ); ?></div>
-				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'slater' ) ); ?></div>
+	    <?php } else { ?>
+				
+				<h2 class="comments__title">Comments &middot; <span class="comments__title-count"><small>Be the first to comment!</small></span></h2>	<span id="comments__title-toggle" class="comments__title-toggle"></span>
+	    </div>
+	    <div id="comments__inner-container" class="comments__inner-container">
+	      <?php //Comment Form ?>
+	      <p class="muted no-margin">Your infomation will never be published or sold.</p>
+	      <p class="muted no-margin">All comments must be approved before they will be displayed.</p>
 
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-below -->
-		<?php
-		endif; // Check for comment navigation.
+	      <ol class="comment-list">
+		      <?php
+		        wp_list_comments( array(
+		          'style'      => 'ol',
+		          'short_ping' => true,
+		        ) );
+		      ?>
+		    </ol><!-- .comment-list -->
 
-	endif; // Check for have_comments().
+	    	<?php $comments_args = array(
+  
+				        // change the title of send button 
+				        'label_submit'=>'Submit',
+				        // change the title of the reply section
+				        'title_reply'=>'',
+				        // remove "Text or HTML to be displayed after the set of comment fields"
+				        'comment_notes_after' => '',
+				        // redefine your own textarea (the comment body)
+				        'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ) . '</label><textarea id="comment" name="comment" aria-required="true"></textarea></p>',
+				);
+
+				comment_form($comments_args);	?>
+
+				</div>
+
+	    <?php } ?>
+
+	</div>
+</section>
 
 
-	// If comments are closed and there are comments, let's leave a little note, shall we?
-	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) : ?>
-
-		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'slater' ); ?></p>
-	<?php
-	endif;
-
-	comment_form();
-	?>
-
-</div><!-- #comments -->

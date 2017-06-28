@@ -19,3 +19,156 @@
 		filter: hue-rotate(22deg);
 	}
 }
+
+
+.comments {
+
+	&__outer-container {
+		margin-top: 15px;
+	}
+	
+	&__title-container {
+		padding: 10px 25px;
+		background: #FBFCFC;
+		@mixin clearfix;
+		z-index: 5;
+
+		&:hover {
+			cursor: pointer;
+			box-shadow: 2px 2px 3px grey;
+		}
+	}
+	
+	&__title {
+		margin: 0;
+		float: left;
+
+		&-count {
+			font-weight: 100;
+			color: #169B93;
+		}
+
+		&-toggle {
+			height: 24px;
+			width: 24px;
+			display: inline-block;
+			float: right;
+			background-image: url('chevrons-down.svg');
+			background-size: cover;
+			cursor: pointer;
+		}
+
+		&-toggle:hover {
+			background-image: url('chevrons-down-hover.svg');
+		}
+	}
+
+	&__inner-container {
+		display: block;
+ 		background: #FBFCFC;
+ 		padding: 10px 25px;
+ 		border-top: solid 1px grey;
+
+ 		& textarea {
+			height: 150px;
+		}
+	}
+}
+
+.comment {
+	
+	/* Top level comment list */
+	&-list {
+		list-style: none;
+		padding-left: 0;
+
+		/* Sub level comment list */
+		& .children {
+			list-style: none;
+		}
+	}
+
+	&-body {
+		margin: 10px 0;
+	}
+
+	&-meta {
+		border: solid 1px #2c5570;
+		border-top-right-radius: 5px;
+		border-top-left-radius: 5px;
+		padding: 5px 10px;
+		height: 62px !important;
+		overflow-y: hidden;
+		display: block;
+		width: 100%;
+		background: rgba(21, 67, 96, 0.9);
+		@mixin clearfix;
+
+		& .comment-author {
+			float: left;
+			height: 50px;
+
+			& img {
+				height: 50px;
+				width: 50px;
+				border-radius: 75px;
+			}
+
+			& .fn {
+				padding-left: 10px;
+				font-weight: normal;
+				font-size: 1.2rem;
+				position: relative;
+				top: -18px;
+				color: #fff;
+			}
+
+			& .says {
+				display: none;
+			}
+		}
+
+		& .comment-metadata {
+			float: right;
+			position: relative;
+			top: 15px;
+
+			& a {
+				font-size: 0.75rem;
+				text-decoration: none;
+			}
+		}
+	
+	}
+
+	&-content {
+		border: solid 1px #2c5570;
+		border-top: none;
+		padding: 5px 10px;
+	}
+
+	& .reply {
+		display: block;
+		width: 100%;
+	}
+
+	&-reply-link {
+		text-decoration: none;
+		width: 100%;
+		font-size: 1.0rem;
+		padding: 6px 10px;
+		display: inline-block;
+		border: solid 1px #2c5570;
+		border-bottom-right-radius: 5px;
+		border-bottom-left-radius: 5px;
+		border-top: none;
+		text-align: center;
+	}
+
+	&-reply-link:hover {
+		background-color: rgba(21,67,96,.9);
+		text-decoration: none;
+		color: #fff;
+	}
+
+}

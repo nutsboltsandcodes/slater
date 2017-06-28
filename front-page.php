@@ -11,12 +11,10 @@
 
 <?php get_header(); ?>
 	
-	<?php 
+	<?php //Hero image template part ?>
+	<?php get_template_part( 'template-parts/frontpage', 'hero');	?>
 	
-	//Hero Image 
-	get_template_part( 'template-parts/frontpage', 'hero');
-
-	?>
+	
 	
 
 
