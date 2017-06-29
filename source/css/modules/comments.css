@@ -137,9 +137,12 @@
 				font-size: 0.75rem;
 				text-decoration: none;
 			}
-		}
-	
+		}	
 	}
+
+.comment-awaiting-moderation {
+			display: none;
+		}
 
 	&-content {
 		border: solid 1px #2c5570;

@@ -784,6 +784,12 @@ img {
 	margin: 0;
 }
 
+.width-75 {
+	max-width: 75%;
+	margin-right: auto;
+	margin-left: auto;
+}
+
 /* Headline styles */
 
 h1, h2, h3, h4, h5, h6 {
@@ -1139,8 +1145,7 @@ pre code {
 		overflow-y: hidden;
 		display: block;
 		width: 100%;
-		background: rgba(21, 67, 96, 0.9);
-	
+		background: rgba(21, 67, 96, 0.9);	
 	}
 
 .comment-meta::after, .comment-meta::before {
@@ -1183,6 +1188,10 @@ pre code {
 				font-size: 0.75rem;
 				text-decoration: none;
 			}
+
+.comment .comment-awaiting-moderation {
+			display: none;
+		}
 
 .comment-content {
 		border: solid 1px #2c5570;
@@ -1243,8 +1252,9 @@ pre code {
 	width: 100%;
 	margin-top: 100px;
 	margin-bottom: 0;
-	padding-bottom: 0;
+	padding-bottom: 30px;
 	background: #FBFCFC;
+	padding-top: 30px;
 	
 }
 
@@ -1655,3 +1665,50 @@ header {
 					position: relative;
 					text-decoration: none;
 				}
+
+.monthly-focus__container {
+		padding: 10px;
+		border-radius: 5px;
+		background-image: url('pattern.png');
+		background-size: contain;
+		text-align: center;
+		margin-bottom: 45px;
+	}
+
+.monthly-focus__container:hover {
+		box-shadow: 0px 0px 30px grey;
+		position: relative;
+		top: -3px;
+	}
+
+.monthly-focus__title {
+		font-size: 3.1rem;
+		margin-bottom: 0;
+	}
+
+.monthly-focus__desc_link {
+		text-decoration: none;	
+	}
+
+.monthly-focus__desc_link p:hover {
+		color: #169b93;
+		position: relative;
+		top: -3px;
+		font-weight: 500;
+	}
+
+.monthly-focus__desc:before {
+		content: "";
+    display: inline-block;
+    background: url("goal.png") no-repeat;
+    width: 30px;
+    height: 30px;
+    margin: 0 10px 0 0;
+    position: relative;
+    top: 7px;
+	}
+
+.monthly-focus__desc {
+		margin-top: 0;
+		display: inline-block;
+	}

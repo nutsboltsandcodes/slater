@@ -181,3 +181,12 @@ function modify_footer() {
 	echo 'Created with love by <a href="mailto:wyatt.castaneda@gmail.com">Wyatt</a> :).';
 }
 add_filter( 'admin_footer_text', 'modify_footer' );
+
+/**
+ * Add Lead Class to First Paragraph
+ */
+
+function first_paragraph( $content ) {
+	return preg_replace( '/<p([^>]+)?>/', '<p$1 class="lead">', $content, 1 );
+}
+add_filter( 'the_content', 'first_paragraph' );
