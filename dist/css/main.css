@@ -1019,6 +1019,14 @@ pre code {
 	}
 	}
 
+.article figure {
+		max-width: 100% !important;
+	}
+
+.article iframe {
+		max-width: 100% !important;	
+	}
+
 .social-sidebar {
 	display: none;
 	position: absolute;

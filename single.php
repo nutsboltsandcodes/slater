@@ -10,7 +10,10 @@
 get_header(); ?>
 
 		<?php
-		while ( have_posts() ) : the_post(); ?>
+		while ( have_posts() ) : the_post(); 
+    slater_set_post_views(get_the_ID());
+    ?>
+
 
       <!-- Hero Image and Title -->
       <?php get_template_part( 'template-parts/post', 'hero' );?>

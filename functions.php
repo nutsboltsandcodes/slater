@@ -190,3 +190,87 @@ function first_paragraph( $content ) {
 	return preg_replace( '/<p([^>]+)?>/', '<p$1 class="lead">', $content, 1 );
 }
 add_filter( 'the_content', 'first_paragraph' );
+
+/**
+ * Add a custom field for post counts to single posts
+ */
+
+function slater_set_post_views($postID) {
+    $count_key = 'slater_post_views_count';
+    $count = get_post_meta($postID, $count_key, true);
+    if($count==''){
+        $count = 0;
+        delete_post_meta($postID, $count_key);
+        add_post_meta($postID, $count_key, '0');
+    }else{
+        $count++;
+        update_post_meta($postID, $count_key, $count);
+    }
+}
+//To keep the count accurate, lets get rid of prefetching
+remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
+
+/*
+* Add Monthly Focus section to admin theme customize screen
+*/
+
+function slater_monthly_focus($wp_customize) {
+
+	//Add section to WP customizer
+	$wp_customize->add_section('slater_monthly_focus_section', array(
+		'title' => 'Monthly Focus'
+	));
+
+	//Add a option to turn of the Monthly Focus Section
+	//Add the Headline setting to the database and provide a default value
+	$wp_customize->add_setting('slater_monthly_focus_display', array(
+		'default' => 'Yes'
+	));
+
+	//Add a control for the setting 
+	$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'slater_monthly_focus_display_control', array(
+		'label' => 'Display this Feature?', 
+		'section' => 'slater_monthly_focus_section', 
+		'settings' => 'slater_monthly_focus_display',
+		'type' => 'select', 
+		'choices' => array('No' => 'No', 'Yes' => 'Yes')
+	)));
+
+	//Add the Headline setting to the database and provide a default value
+	$wp_customize->add_setting('slater_monthly_focus_headline', array(
+		'default' => 'Monthly Focus!'
+	));
+
+	//Add a control for the setting 
+	$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'slater_monthly_focus_headline_control', array(
+		'label' => 'Headline', 
+		'section' => 'slater_monthly_focus_section', 
+		'settings' => 'slater_monthly_focus_headline'
+	)));
+
+	//Add the Headline setting to the database and provide a default value
+	$wp_customize->add_setting('slater_monthly_focus_text', array(
+		'default' => 'My Example Focus!'
+	));
+
+	//Add a control for the setting 
+	$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'slater_monthly_focus_text_control', array(
+		'label' => 'What is your Monthly Focus?', 
+		'section' => 'slater_monthly_focus_section', 
+		'settings' => 'slater_monthly_focus_text'
+	)));
+
+	//Add the ability to point the link to an existing page
+	$wp_customize->add_setting('slater_monthly_focus_link');
+
+	//Add a control for the setting 
+	$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'slater_monthly_focus_link_control', array(
+		'label' => 'Link', 
+		'section' => 'slater_monthly_focus_section', 
+		'settings' => 'slater_monthly_focus_link', 
+		'type' => 'dropdown-pages'
+	)));
+
+}
+
+add_action('customize_register','slater_monthly_focus');
