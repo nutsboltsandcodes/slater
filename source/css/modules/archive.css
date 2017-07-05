@@ -1,0 +1,31 @@
+.archive-index {
+	margin: 0;
+	padding: 0;
+	@mixin clearfix;
+
+	&-headline {
+		margin-bottom: 0;
+	}
+
+	&-excerpt {
+		margin-top: 0;
+		margin-bottom: 5px;
+	}
+
+	&-link {
+		float: right;
+		margin: 10px;
+
+		@mixin atMedium{
+			margin: 10px 0;
+		}
+	}
+
+	&-tags {
+		@mixin clearfix;
+
+		& a {
+			font-size: small;
+		}
+	}
+}

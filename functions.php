@@ -191,46 +191,26 @@ function first_paragraph( $content ) {
 }
 add_filter( 'the_content', 'first_paragraph' );
 
-/**
- * Add a custom field for post counts to single posts
- */
-
-function slater_set_post_views($postID) {
-    $count_key = 'slater_post_views_count';
-    $count = get_post_meta($postID, $count_key, true);
-    if($count==''){
-        $count = 0;
-        delete_post_meta($postID, $count_key);
-        add_post_meta($postID, $count_key, '0');
-    }else{
-        $count++;
-        update_post_meta($postID, $count_key, $count);
-    }
-}
-//To keep the count accurate, lets get rid of prefetching
-remove_action( 'wp_head', 'adjacent_posts_rel_link_wp_head', 10, 0);
-
 /*
-* Add Monthly Focus section to admin theme customize screen
+* Add a home page settings section to the WordPress customizer
 */
 
-function slater_monthly_focus($wp_customize) {
+function slater_home_page_settings($wp_customize) {
 
 	//Add section to WP customizer
-	$wp_customize->add_section('slater_monthly_focus_section', array(
-		'title' => 'Monthly Focus'
+	$wp_customize->add_section('slater_home_page_section', array(
+		'title' => 'Home Page Settings'
 	));
 
 	//Add a option to turn of the Monthly Focus Section
-	//Add the Headline setting to the database and provide a default value
 	$wp_customize->add_setting('slater_monthly_focus_display', array(
 		'default' => 'Yes'
 	));
 
 	//Add a control for the setting 
 	$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'slater_monthly_focus_display_control', array(
-		'label' => 'Display this Feature?', 
-		'section' => 'slater_monthly_focus_section', 
+		'label' => 'Display the Monthly Focus Feature?', 
+		'section' => 'slater_home_page_section', 
 		'settings' => 'slater_monthly_focus_display',
 		'type' => 'select', 
 		'choices' => array('No' => 'No', 'Yes' => 'Yes')
@@ -244,7 +224,7 @@ function slater_monthly_focus($wp_customize) {
 	//Add a control for the setting 
 	$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'slater_monthly_focus_headline_control', array(
 		'label' => 'Headline', 
-		'section' => 'slater_monthly_focus_section', 
+		'section' => 'slater_home_page_section', 
 		'settings' => 'slater_monthly_focus_headline'
 	)));
 
@@ -256,7 +236,7 @@ function slater_monthly_focus($wp_customize) {
 	//Add a control for the setting 
 	$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'slater_monthly_focus_text_control', array(
 		'label' => 'What is your Monthly Focus?', 
-		'section' => 'slater_monthly_focus_section', 
+		'section' => 'slater_home_page_section', 
 		'settings' => 'slater_monthly_focus_text'
 	)));
 
@@ -266,11 +246,65 @@ function slater_monthly_focus($wp_customize) {
 	//Add a control for the setting 
 	$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'slater_monthly_focus_link_control', array(
 		'label' => 'Link', 
-		'section' => 'slater_monthly_focus_section', 
+		'section' => 'slater_home_page_section', 
 		'settings' => 'slater_monthly_focus_link', 
 		'type' => 'dropdown-pages'
 	)));
 
 }
 
-add_action('customize_register','slater_monthly_focus');
+add_action('customize_register','slater_home_page_settings');
+
+/*
+* Add a footer settings section to the WordPress customizer
+*/
+
+function slater_footer_settings($wp_customize) {
+
+	//Add section to WP customizer
+	$wp_customize->add_section('slater_footer_settings', array(
+		'title' => 'Footer Settings'
+	));
+
+	//Add a text area input for the footer blurb
+	$wp_customize->add_setting('slater_footer_blurb_setting', array(
+		'default' => 'Change me in the WordPress customizer. Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.'
+	));
+
+	//Add a control for the footer blurb setting 
+	$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'slater_footer_blurb_control', array(
+		'label' => 'Footer Blurb', 
+		'section' => 'slater_footer_settings', 
+		'settings' => 'slater_footer_blurb_setting',
+		'type' => 'textarea'
+	)));
+
+	//Add a option to turn of the footer signup form
+	$wp_customize->add_setting('slater_mailchimp_form_display', array(
+		'default' => 'Yes'
+	));
+
+	//Add a control for the display setting 
+	$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'slater_mailchimp_form_display_control', array(
+		'label' => 'Display the Sign Up Form?', 
+		'section' => 'slater_footer_settings', 
+		'settings' => 'slater_mailchimp_form_display',
+		'type' => 'select', 
+		'choices' => array('No' => 'No', 'Yes' => 'Yes')
+	)));
+
+	//Add the url setting to the database and provide a default value
+	$wp_customize->add_setting('slater_form_setting', array(
+		'default' => ''
+	));
+
+	//Add a control for the setting 
+	$wp_customize->add_control( new WP_Customize_Control($wp_customize, 'slater_form_control', array(
+		'label' => 'Your Mailchimp Form Action URL', 
+		'section' => 'slater_footer_settings', 
+		'settings' => 'slater_form_setting'
+	)));
+
+}
+
+add_action('customize_register','slater_footer_settings');

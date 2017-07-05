@@ -16,16 +16,17 @@
 	 <footer class="footer">
 
     <div class="container center-block">
-      <p class="footer__blurb">My name is Wyatt and I have a passion for learning. I am also a huge fan of DIY projects. I am a completely self taught web developer, but would never had made it this far without the amazing web design and development community. This is my way of giving back. If my posts have helped you, or if you just like to nerd out over web design, development, and DIY posts, please suscribe below. I'll never sell or publish you information, and I'll never send you useless spam. Cheers.</p>
-      <div class="width-75">
-        <form class="suscribe-form">
-          <input type="email" name="email">
-          <input type="submit" name="sumbit" value="Suscribe!">
-        </form>
-      </div>
+      <p class="footer__blurb"><?php echo get_theme_mod('slater_footer_blurb_setting'); ?></p>
+
+        <?php if ( get_theme_mod('slater_mailchimp_form_display') == 'Yes' ) {
+          get_template_part('template-parts/footer/footer', 'form');
+        } ?>
+
     </div>
 
   </footer>
+
+  <script type='text/javascript' src='//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js'></script><script type='text/javascript'>(function($) {window.fnames = new Array(); window.ftypes = new Array();fnames[0]='EMAIL';ftypes[0]='email';fnames[1]='FNAME';ftypes[1]='text';fnames[2]='LNAME';ftypes[2]='text';}(jQuery));var $mcj = jQuery.noConflict(true);</script>
 
 <?php wp_footer(); ?>
 

@@ -117,10 +117,22 @@
 			& .fn {
 				padding-left: 10px;
 				font-weight: normal;
-				font-size: 1.2rem;
+				font-size: 1.0rem;
 				position: relative;
 				top: -18px;
 				color: #fff;
+
+				@mixin atMedium {
+					font-size: 1.2rem;
+				}
+
+				& .url {
+					font-size: 1.0rem;
+
+					@mixin atMedium {
+						font-size: 1.2rem;		
+					}
+				}
 			}
 
 			& .says {

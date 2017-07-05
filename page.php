@@ -14,7 +14,7 @@
 	<?php 
 	
 	//Hero Image 
-	get_template_part( 'template-parts/page', 'hero');
+	get_template_part( 'template-parts/page/page', 'hero');
 
 	?>
 	
@@ -27,7 +27,7 @@
         <div class="article__meta">
           
           <!-- Post/Update date -->
-          <?php get_template_part( 'template-parts/post', 'date' );?>
+          <?php get_template_part( 'template-parts/post/post', 'date' );?>
 
         </div>
 

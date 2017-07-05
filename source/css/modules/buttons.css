@@ -1,0 +1,22 @@
+.btn {
+	display: inline-block;
+	padding: 5px 10px; 
+	border: solid 1px #20b2aa;
+	background: none;
+	border-radius: 5px; 
+	color: #20b2aa;
+	cursor: pointer;
+
+	&:hover {
+		background-color: #20b2aa;
+		color: #fff;
+	}
+}
+
+a.btn {
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: none;
+	}
+}

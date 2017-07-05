@@ -1,7 +1,6 @@
 window.onload = function checkScroll() {
 	headerOnScroll();
-	comments();
-	nav();
+	mobileMenu();
 }
 
 window.onresize = function refreshHeader() {
@@ -42,53 +41,25 @@ function headerOnScroll() {
 	}
 }
 
+/* 
+* Add or remove a class to the navigation menu on click
+*/
 
-function nav() {
+function mobileMenu() {
 
 	var toggle 	= document.getElementById('top-nav__toggle'), 
 			nav 		= document.getElementsByTagName('nav')[0];
 
 	toggle.onclick = function() {
-		nav.style.visibility = "visible";
-		nav.style.display 	 = "block";
-		toggle.style.backgroundImage	= 'url("./dist/css/menu_close.png")';
+
+		if ( nav.style.display = "none" ) {
+			nav.style.visibility = "visible";
+			nav.style.display 	 = "block";
+			toggle.style.backgroundImage	= 'url(' + templateDir + '/dist/css/minified/menu_close.png)';
+		} else if ( nav.style.display = "block" ) {
+			nav.style.visibility = "hidden";
+			nav.style.display 	 = "none";
+			toggle.style.backgroundImage	= 'url(' + templateDir + '/dist/css/menu-toggle.png)';
+		}
 	}
 }
-
-var comments_toggle = document.getElementById('comments__outer-container'),
-		comments_inner = document.getElementById('comments__inner-container'), 
-		comments_arrow	= document.getElementById('comments__title-toggle');
-
-comments_toggle.onclick = function() {
-		comments_inner.style.display = "block";
-		comments_inner.style.visibility = "visible";
-		comments_arrow.style.transform = "rotateX(180deg)";
-		comments_toggle.setAttribute('id', 'comments__toggled');
-}
-
-function comments() {
-
-	var comments__toggled = document.getElementById('comments__toggled');
-
-	if ( comments__toggled != null) {
-		comments__toggled.onclick = function() {
-			comments_inner.style.display = "none";
-			comments_inner.style.visibility = "hidden";
-			comments_toggle.setAttribute('id', 'comments__outer-container');
-		}
-	}	else {
-		
-		var comments_toggle = document.getElementById('comments__outer-container'),
-		comments_inner = document.getElementById('comments__inner-container'), 
-		comments_arrow	= document.getElementById('comments__title-toggle');
-
-		comments_toggle.onclick = function() {
-			comments_inner.style.display = "block";
-			comments_inner.style.visibility = "visible";
-			comments_arrow.style.transform = "rotateX(180deg)";
-			comments_toggle.setAttribute('id', 'comments__toggled');
-		}
-
-	}
-}
- 

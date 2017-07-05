@@ -11,12 +11,11 @@ get_header(); ?>
 
 		<?php
 		while ( have_posts() ) : the_post(); 
-    slater_set_post_views(get_the_ID());
     ?>
 
 
       <!-- Hero Image and Title -->
-      <?php get_template_part( 'template-parts/post', 'hero' );?>
+      <?php get_template_part( 'template-parts/post/post', 'hero' );?>
 
 	    <div class="container center-block">
 
@@ -25,10 +24,10 @@ get_header(); ?>
         <div class="article__meta">
           
           <!-- Post tags -->
-          <?php get_template_part( 'template-parts/post', 'tags' );?>
+          <?php get_template_part( 'template-parts/post/post', 'tags' );?>
           
           <!-- Post/Update date -->
-          <?php get_template_part( 'template-parts/post', 'date' );?>
+          <?php get_template_part( 'template-parts/post/post', 'date' );?>
 
         </div>
 
@@ -41,7 +40,7 @@ get_header(); ?>
         <div class="article__meta">
 
           <!-- Post Categories -->
-          <?php get_template_part( 'template-parts/post', 'cat' );?>          
+          <?php get_template_part( 'template-parts/post/post', 'cat' );?>          
       
         </div>
 

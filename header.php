@@ -2,7 +2,6 @@
 /**
  * The header for our theme
  *
- * This is the template that displays all of the <head> section and everything up until <div id="content">
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
@@ -16,6 +15,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="http://gmpg.org/xfn/11">
   <link rel="icon" href="favicon.ico">
+  <script>
+    var templateDir = "<?php bloginfo('template_directory'); ?>";
+  </script>
   <?php wp_head(); ?>
 </head>
 

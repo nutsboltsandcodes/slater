@@ -1,0 +1,32 @@
+.index {
+	margin: 0;
+	padding: 0;
+	@mixin clearfix;
+
+	&-headline {
+		margin-bottom: 0;
+	}
+
+	&-excerpt {
+		display: block;
+
+		@mixin atMedium {
+			margin-top: 0;
+			margin-bottom: 5px;
+			float: left;
+			width: 70%;
+		}
+	}
+
+	&-link {
+		display: block;
+		text-align: center;
+		margin-bottom: 20px;
+
+		@mixin atMedium {
+			float: right;
+			width: 23%;
+			display: block;
+		}
+	}
+}

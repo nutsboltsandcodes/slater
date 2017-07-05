@@ -64,6 +64,21 @@ select {
 }
 
 [type=color]:active, [type=color]:focus, [type=date]:active, [type=date]:focus, [type=datetime-local]:active, [type=datetime-local]:focus, [type=datetime]:active, [type=datetime]:focus, [type=email]:active, [type=email]:focus, [type=month]:active, [type=month]:focus, [type=number]:active, [type=number]:focus, [type=password]:active, [type=password]:focus, [type=search]:active, [type=search]:focus, [type=tel]:active, [type=tel]:focus, [type=text]:active, [type=text]:focus, [type=time]:active, [type=time]:focus, [type=url]:active, [type=url]:focus, [type=week]:active, [type=week]:focus, select:active, select:focus, textarea:active, textarea:focus {
-    border: 1px solid rgba(21, 67, 96, 1);
-    box-shadow: inset 0 1px 1px rgba(0,0,0,.1), 0 0 6px #8cbcfe;
+    border: 1px solid #20b2aa;
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.1), 0 0 6px #198e88;
+}
+
+input[type=submit] {
+	display: inline-block;
+	padding: 5px 10px; 
+	border: solid 1px #20b2aa;
+	background: none;
+	border-radius: 5px; 
+	color: #20b2aa;
+	cursor: pointer;
+
+	&:hover {
+		background-color: #20b2aa;
+		color: #fff;
+	}
 }

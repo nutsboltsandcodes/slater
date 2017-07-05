@@ -19,7 +19,7 @@
 	<?php 
 	
 	//Hero Image 
-	get_template_part( 'template-parts/page', 'hero');
+	get_template_part( 'template-parts/page/page', 'hero');
 
 	?>
 	
