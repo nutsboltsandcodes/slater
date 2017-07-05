@@ -1,0 +1,18 @@
+Running To Do List
+	- add menu item/icon
+		- will create drop down menu with additional navigation options
+	- change excerpt text to -> ... Read More (link)
+	- add read other articles above the comments section for posts
+	- fix the comment accordian functionality 
+	- add social links to footer under form & add WP customizer options for links
+	- add social sharing sidebar
+	- fix mobile menu functionality
+
+Soft Launch Date
+- 10 July 2017
+	- Upload to nutsboltsandcodes
+	- Mobile device styling fixes
+	- Any other issues found
+
+Hard Launch Date
+- 15 July 2017
