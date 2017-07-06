@@ -1,6 +1,7 @@
 window.onload = function checkScroll() {
 	headerOnScroll();
 	mobileMenu();
+	commentsToggle();
 }
 
 window.onresize = function refreshHeader() {
@@ -41,25 +42,41 @@ function headerOnScroll() {
 	}
 }
 
+/*
+* Comments toggle functionality
+*/
+
+function commentsToggle() {
+
+	var nav 		= document.getElementById('comments__inner-container'),
+			toggle 	= document.getElementById('comments-toggle');
+
+	console.log('fuck');
+
+	toggle.onclick = function() {
+		console.log('fuck');
+		if ( nav.className === "comments__inner-container" ) {
+			nav.className += " comments__inner-container--toggled";
+		} else {
+			nav.className = "comments__inner-container";
+		}
+	}
+}
+
 /* 
 * Add or remove a class to the navigation menu on click
 */
 
 function mobileMenu() {
 
-	var toggle 	= document.getElementById('top-nav__toggle'), 
-			nav 		= document.getElementsByTagName('nav')[0];
+	var nav 		= document.getElementsByTagName('nav')[0],
+			toggle 	= document.getElementById('top-nav__toggle');
 
 	toggle.onclick = function() {
-
-		if ( nav.style.display = "none" ) {
-			nav.style.visibility = "visible";
-			nav.style.display 	 = "block";
-			toggle.style.backgroundImage	= 'url(' + templateDir + '/dist/css/minified/menu_close.png)';
-		} else if ( nav.style.display = "block" ) {
-			nav.style.visibility = "hidden";
-			nav.style.display 	 = "none";
-			toggle.style.backgroundImage	= 'url(' + templateDir + '/dist/css/menu-toggle.png)';
+		if ( nav.className === "top-nav__nav" ) {
+			nav.className += " top-nav__nav-vis";
+		} else {
+			nav.className = "top-nav__nav";
 		}
 	}
 }

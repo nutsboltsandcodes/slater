@@ -28,7 +28,7 @@
 	}
 	
 	&__title-container {
-		padding: 10px 25px;
+		padding: 10px 15px;
 		background: #FBFCFC;
 		@mixin clearfix;
 		z-index: 5;
@@ -37,11 +37,20 @@
 			cursor: pointer;
 			box-shadow: 2px 2px 3px grey;
 		}
+
+		@mixin atMedium {
+			padding: 10px 25px;
+		}
 	}
 	
 	&__title {
 		margin: 0;
 		float: left;
+		font-size: 1.0rem;
+
+		@mixin atMedium {
+			font-size: 1.6rem;
+		}
 
 		&-count {
 			font-weight: 100;
@@ -64,14 +73,19 @@
 	}
 
 	&__inner-container {
-		display: block;
+		display: none;
  		background: #FBFCFC;
  		padding: 10px 25px;
  		border-top: solid 1px grey;
+ 		transition: display 1s linear;
 
  		& textarea {
 			height: 150px;
 		}
+	}
+
+	&__inner-container--toggled {
+		display: block !important;
 	}
 }
 

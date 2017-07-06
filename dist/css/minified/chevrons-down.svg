@@ -1,0 +1,29 @@
+<svg width="32" height="32" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<title>chevrons-down</title>
+<desc>Created using Figma</desc>
+<g id="Canvas" transform="translate(407 -326)">
+<g id="chevrons-down">
+<g id="Ellipse">
+<mask id="mask0_outline_ins">
+<use xlink:href="#path0_fill" fill="white" transform="translate(-407 326)"/>
+</mask>
+<g mask="url(#mask0_outline_ins)">
+<use xlink:href="#path1_stroke_2x" transform="translate(-407 326)" fill="#20B2AA"/>
+</g>
+</g>
+<g id="Group">
+<g id="Vector">
+<use xlink:href="#path2_stroke" transform="translate(-396 343.455)" fill="#20B2AA"/>
+</g>
+<g id="Vector">
+<use xlink:href="#path2_stroke" transform="translate(-396 336.667)" fill="#20B2AA"/>
+</g>
+</g>
+</g>
+</g>
+<defs>
+<path id="path0_fill" d="M 32 16C 32 24.8366 24.8366 32 16 32C 7.16344 32 0 24.8366 0 16C 0 7.16344 7.16344 0 16 0C 24.8366 0 32 7.16344 32 16Z"/>
+<path id="path1_stroke_2x" d="M 31 16C 31 24.2843 24.2843 31 16 31L 16 33C 25.3888 33 33 25.3888 33 16L 31 16ZM 16 31C 7.71573 31 1 24.2843 1 16L -1 16C -1 25.3888 6.61116 33 16 33L 16 31ZM 1 16C 1 7.71573 7.71573 1 16 1L 16 -1C 6.61116 -1 -1 6.61116 -1 16L 1 16ZM 16 1C 24.2843 1 31 7.71573 31 16L 33 16C 33 6.61116 25.3888 -1 16 -1L 16 1Z"/>
+<path id="path2_stroke" d="M 0.696146 -0.7179C 0.29966 -1.10237 -0.33343 -1.09263 -0.7179 -0.696146C -1.10237 -0.29966 -1.09263 0.33343 -0.696146 0.7179L 0.696146 -0.7179ZM 5 4.84848L 4.30385 5.56639C 4.69174 5.94252 5.30826 5.94252 5.69615 5.56639L 5 4.84848ZM 10.6961 0.7179C 11.0926 0.33343 11.1024 -0.29966 10.7179 -0.696146C 10.3334 -1.09263 9.70034 -1.10237 9.30385 -0.7179L 10.6961 0.7179ZM -0.696146 0.7179L 4.30385 5.56639L 5.69615 4.13058L 0.696146 -0.7179L -0.696146 0.7179ZM 5.69615 5.56639L 10.6961 0.7179L 9.30385 -0.7179L 4.30385 4.13058L 5.69615 5.56639Z"/>
+</defs>
+</svg>
