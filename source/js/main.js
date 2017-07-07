@@ -51,8 +51,6 @@ function commentsToggle() {
 	var nav 		= document.getElementById('comments__inner-container'),
 			toggle 	= document.getElementById('comments-toggle');
 
-	console.log('fuck');
-
 	toggle.onclick = function() {
 		console.log('fuck');
 		if ( nav.className === "comments__inner-container" ) {

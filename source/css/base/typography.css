@@ -50,6 +50,10 @@ a {
 
 /* Blockquote styles */
 
+blockquote {
+	margin: 0;
+}
+
 blockquote p {
 	border-left: $bq-border solid #068D9D;
 	font-family: $font-family;

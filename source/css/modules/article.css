@@ -65,6 +65,7 @@
 		width: auto;
 		max-width: 100% !important;
 		height: auto !important;
+		box-shadow: 0 0 10px grey;
 	}
 
 	& .extend {
