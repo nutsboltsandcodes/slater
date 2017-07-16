@@ -65,17 +65,17 @@
 		width: auto;
 		max-width: 100% !important;
 		height: auto !important;
-		box-shadow: 0 0 10px grey;
 	}
 
 	& .extend {
 		max-width: 100%;
 
-		@mixin atMedium {
-			max-width: 122% !important;
+		@mixin atDesktop {
+			width: 125%;
+			max-width: 125% !important;
 			height: auto !important;
 			position: relative;
-			right: 75px;
+			transform: translateX(-12%);
 			box-shadow: 0 2px 15px grey;
 		}
 	}

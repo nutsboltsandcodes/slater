@@ -947,6 +947,73 @@ pre {
   color: #fff;
 }
 
+.row {
+	display: block;
+	margin: 0;
+	padding: 0;
+	display: flex;
+}
+
+.row::after, .row::before {
+		content: "";
+		clear: both;
+		display: table;
+	}
+
+.row .col-6	{
+			display: flex;
+			margin-bottom: 10px;
+			margin-right: 10px;
+			width: 100%;
+		}
+
+@media (min-width: 600px) {
+
+.row .col-6	{
+				width: 50%
+		}
+	}
+
+.row .col-6:last-child {
+				margin-right: 0;
+			}
+
+.read-more {
+	background: #fff;
+	margin-top: 10px;
+	padding: 5px 25px;
+	width: 100%;
+}
+
+@media (min-width: 600px) {
+
+.read-more {
+		margin-top: 15px
+}
+	}
+
+.read-more:first {
+		margin-right: 20px;
+	}
+
+.read-more__title {
+		margin-bottom: 0;
+		font-size: 1.0rem;
+	}
+
+@media (min-width: 600px) {
+
+.read-more__title {
+			font-size: 1.25rem
+	}
+	}
+
+.read-more__content p {
+		margin-top: 0.25em;
+		margin-bottom: 1.0em;
+		font-size: 1.0rem;
+	}
+
 .article {
 		background: #FBFCFC;
 		padding: 20px 25px;
@@ -1022,20 +1089,20 @@ pre {
 		width: auto;
 		max-width: 100% !important;
 		height: auto !important;
-		box-shadow: 0 0 10px grey;
 	}
 
 .article .extend {
 		max-width: 100%;
 	}
 
-@media (min-width: 600px) {
+@media (min-width: 800px) {
 
 .article .extend {
-			max-width: 122% !important;
+			width: 125%;
+			max-width: 125% !important;
 			height: auto !important;
 			position: relative;
-			right: 75px;
+			transform: translateX(-12%);
 			box-shadow: 0 2px 15px grey
 	}
 	}
@@ -1070,30 +1137,15 @@ pre {
 		filter: hue-rotate(22deg);
 	}
 
-.social-sidebar {
-	display: none;
-	position: absolute;
-	top: 575px;
-	right: 475px;
-	text-align: center;
-}
-
-.social-sidebar__title {
-		display: block;
-		color: grey;
+.comments__outer-container {
+		margin-top: 0;
 	}
 
-.social-sidebar__link img {
-		width: 32px;
-		height: auto;
-	}
-
-.social-sidebar__link img:hover {
-		filter: hue-rotate(22deg);
-	}
+@media (min-width: 600px) {
 
 .comments__outer-container {
-		margin-top: 15px;
+			margin-top: 5px
+	}
 	}
 
 .comments__title-container {
@@ -1110,7 +1162,8 @@ pre {
 
 .comments__title-container:hover {
 			cursor: pointer;
-			box-shadow: 2px 2px 3px grey;
+			position: relative;
+			top: 2px;
 		}
 
 @media (min-width: 600px) {
@@ -1156,7 +1209,6 @@ pre {
 		display: none;
  		background: #FBFCFC;
  		padding: 10px 25px;
- 		border-top: solid 1px grey;
  		transition: display 1s linear;
 	}
 
@@ -1317,13 +1369,21 @@ pre {
 .footer {
 	min-height: 300px;
 	width: 100%;
-	margin-top: 50px;
+	margin-top: 10px;
 	margin-bottom: 0;
-	padding-bottom: 30px;
+	padding-bottom: 10px;
 	background: #FBFCFC;
 	padding-top: 30px;
 	
 }
+
+@media (min-width: 600px) {
+
+.footer {
+		margin-top: 50px
+	
+}
+	}
 
 .footer__blurb {
 		padding: 20px 25px 20px 25px;
@@ -1331,8 +1391,21 @@ pre {
 	}
 
 .footer__social {
-		
+		width: 32px;
+		height: 32px;
+		display: inline-block;
+		margin: 10px 10px;
 	}
+
+.footer__social:hover {
+			position: relative;
+			top: -3px;
+		}
+
+.footer__social-container {
+			text-align: center;
+			margin-top: 20px;
+		}
 
 /* Form Styles */
 

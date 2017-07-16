@@ -1,6 +1,6 @@
 <?php
 /**
- * The header for our theme
+ * The header for our theme 
  *
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
@@ -31,7 +31,7 @@
     <div class="top-nav top-nav__container">
       
       <!-- Logo -->
-      <a href="<?php bloginfo('url'); ?>" class="top-nav__logo"><img alt="<?php bloginfo('title'); ?>" src="<?php echo get_template_directory_uri(); ?>/images/logo.PNG"></a>
+      <a href="<?php bloginfo('url'); ?>" class="top-nav__logo"><img alt="<?php bloginfo('title'); ?>" src="<?php echo get_template_directory_uri(); ?>/images/logo.png"></a>
       <!-- Mobile Menu Toggle -->
       <span id="top-nav__toggle" class="top-nav__toggle"></span>
 

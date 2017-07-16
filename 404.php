@@ -1,64 +1,35 @@
 <?php
 /**
- * The template for displaying 404 pages (not found)
+ * This template is called if a user ends up on a page that does not exist
  *
  * @link https://codex.wordpress.org/Creating_an_Error_404_Page
  *
  * @package Slater
  */
+?> 
 
-get_header(); ?>
+<?php get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+	  <!-- Single Hero Image and Title -->
+    <?php get_template_part( 'template-parts/404/404', 'hero' ); ?>
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'slater' ); ?></h1>
-				</header><!-- .page-header -->
+    <div class="container center-block">
+      <article class="article">
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'slater' ); ?></p>
+        <div class="article__content">
+					<h2 class="text-center">We can try <strong>Searching</strong> our way out?</h2>
+          <?php get_search_form(); ?>
+        </div><?php //article__content ?>
+        <div class="article__meta">
+          
+        </div>
+      </article>
 
-					<?php
-						get_search_form();
+      <?php 
+        //Display two random read more posts 
+        get_template_part( 'template-parts/post/post', 'readmore' );
+      ?>
 
-						the_widget( 'WP_Widget_Recent_Posts' );
+    </div><?php //container ?>
 
-						// Only show the widget if site has multiple categories.
-						if ( slater_categorized_blog() ) :
-					?>
-
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'slater' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-						endif;
-
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'slater' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
-
-		</main><!-- #main -->
-	</div><!-- #primary -->
-
-<?php
-get_footer();
+<?php get_footer(); ?>

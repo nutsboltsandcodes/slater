@@ -6,6 +6,12 @@
 	    <p class="hero__text-subtitle"><?php echo strip_tags(get_the_archive_description()); ?></p>
 	  </div>
 	  <div class="hero__image-container">
-				<img src="<?php bloginfo('template_directory'); ?>/images/default-hero.jpg" alt="<?php the_title(); ?>" />
+			<?php 
+				if ( has_post_thumbnail() ) {
+					the_post_thumbnail();
+				} else { ?>
+					<img src="<?php bloginfo('template_directory'); ?>/images/default-hero.jpg" alt="<?php the_title(); ?>" />
+				<?php } 
+			?>
 		</div>
 	</div>

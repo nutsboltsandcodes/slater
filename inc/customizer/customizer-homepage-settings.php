@@ -27,7 +27,8 @@ function slater_home_page_settings($wp_customize) {
 
 	//Add the Headline setting to the database and provide a default value
 	$wp_customize->add_setting('slater_monthly_focus_headline', array(
-		'default' => 'Monthly Focus!'
+		'default' => 'Monthly Focus!',
+		'sanitize_callback' => 'sanitize_text_field'
 	));
 
 	//Add a control for the setting 
@@ -39,7 +40,8 @@ function slater_home_page_settings($wp_customize) {
 
 	//Add the Headline setting to the database and provide a default value
 	$wp_customize->add_setting('slater_monthly_focus_text', array(
-		'default' => 'My Example Focus!'
+		'default' => 'My Example Focus!', 
+		'sanitize_callback' => 'sanitize_text_field'
 	));
 
 	//Add a control for the setting 
@@ -58,6 +60,16 @@ function slater_home_page_settings($wp_customize) {
 		'section' => 'slater_home_page_section', 
 		'settings' => 'slater_monthly_focus_link', 
 		'type' => 'dropdown-pages'
+	)));
+
+	//Add the ability to point the link to an existing page
+	$wp_customize->add_setting('slater_theme_logo_setting');
+
+	//Add a control for the setting 
+	$wp_customize->add_control( new WP_Customize_Cropped_Image_Control($wp_customize, 'slater_theme_logo_control', array(
+		'label' => 'Logo', 
+		'section' => 'slater_home_page_section', 
+		'settings' => 'slater_theme_logo_setting', 
 	)));
 
 }

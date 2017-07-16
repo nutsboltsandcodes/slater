@@ -1,0 +1,57 @@
+.row {
+	display: block;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	@mixin clearfix;
+
+	& .col {
+		
+		&-6	{
+			display: flex;
+			margin-bottom: 10px;
+			margin-right: 10px;
+			width: 100%;
+
+			@mixin atMedium {
+				width: 50%;		
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+}
+
+
+.read-more {
+	background: #fff;
+	margin-top: 10px;
+	padding: 5px 25px;
+	width: 100%;
+
+	@mixin atMedium {
+		margin-top: 15px;
+	}
+
+	&:first {
+		margin-right: 20px;
+	}
+
+	&__title {
+		margin-bottom: 0;
+		font-size: 1.0rem;
+
+		@mixin atMedium {
+			font-size: 1.25rem;
+		}
+	}
+
+	&__content p {
+		margin-top: 0.25em;
+		margin-bottom: 1.0em;
+		font-size: 1.0rem;
+	}
+}
+

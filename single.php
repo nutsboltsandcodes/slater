@@ -6,53 +6,53 @@
  *
  * @package Slater
  */
+?> 
 
-get_header(); ?>
+<?php get_header(); ?>
 
-		<?php
-		while ( have_posts() ) : the_post(); 
-    ?>
+	<?php
+  
+  //Begin WordPress loop 
+  while ( have_posts() ) : the_post(); ?>
 
+    <!-- Single Hero Image and Title -->
+    <?php get_template_part( 'template-parts/post/post', 'hero' ); ?>
 
-      <!-- Hero Image and Title -->
-      <?php get_template_part( 'template-parts/post/post', 'hero' );?>
-
-	    <div class="container center-block">
-
+    <div class="container center-block">
       <article class="article">
-
         <div class="article__meta">
-          
-          <!-- Post tags -->
-          <?php get_template_part( 'template-parts/post/post', 'tags' );?>
-          
-          <!-- Post/Update date -->
-          <?php get_template_part( 'template-parts/post/post', 'date' );?>
-
-        </div>
-
+          <?php
+            //Post tags
+            get_template_part( 'template-parts/post/post', 'tags' );
+            //Post/update date
+            get_template_part( 'template-parts/post/post', 'date' ); 
+          ?>
+        </div><?php //article__meta ?>
         <div class="article__content">
-
 					<?php the_content(); ?>
-
-        </div><!-- /article content -->
-
+        </div><?php //article__content ?>
         <div class="article__meta">
-
-          <!-- Post Categories -->
-          <?php get_template_part( 'template-parts/post/post', 'cat' );?>          
-      
+          <?php
+            //Post Categories
+            get_template_part( 'template-parts/post/post', 'cat' );
+          ?>          
         </div>
+      </article><?php //article ?>
 
-      </article>
+      <?php 
+        //Display two random read more posts 
+        get_template_part( 'template-parts/post/post', 'readmore' );
+      ?>
 
-      <?php // If comments are open or we have at least one comment, load up the comment template.
-      if ( comments_open() || get_comments_number() ) :
-        comments_template();
-      endif; ?>
+      <?php 
+        // If comments are open or we have at least one comment, load up the comment template.
+        if ( comments_open() || get_comments_number() ) :
+          comments_template();
+        endif;
+      ?>
 
-    </div>
+    </div><?php //container ?>
 		
-		<?php endwhile; // End of the loop.?>
+	<?php endwhile; //End of the loop.?>
 
 <?php get_footer(); ?>

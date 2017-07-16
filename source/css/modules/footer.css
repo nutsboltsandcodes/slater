@@ -1,11 +1,15 @@
 .footer {
 	min-height: 300px;
 	width: 100%;
-	margin-top: 50px;
+	margin-top: 10px;
 	margin-bottom: 0;
-	padding-bottom: 30px;
+	padding-bottom: 10px;
 	background: #FBFCFC;
 	padding-top: 30px;
+
+	@mixin atMedium {
+		margin-top: 50px;
+	}
 
 	&__blurb {
 		padding: 20px 25px 20px 25px;
@@ -13,7 +17,21 @@
 	}
 
 	&__social {
-		
+		width: 32px;
+		height: 32px;
+		display: inline-block;
+		margin: 10px 10px;
+
+		&:hover {
+			position: relative;
+			top: -3px;
+		}
+
+
+		&-container {
+			text-align: center;
+			margin-top: 20px;
+		}
 	}
 	
 }

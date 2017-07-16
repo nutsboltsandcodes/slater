@@ -12,7 +12,8 @@ function slater_footer_settings($wp_customize) {
 
 	//Add a text area input for the footer blurb, provide default text
 	$wp_customize->add_setting('slater_footer_blurb_setting', array(
-		'default' => 'Change me in the WordPress customizer. Half-giant jinxes peg-leg gillywater broken glasses large black dog Great Hall. Nearly-Headless Nick now string them together, and answer me this, which creature would you be unwilling to kiss? Poltergeist sticking charm, troll umbrella stand flying cars golden locket Lily Potter. Yer a wizard, Harry Doxycide the woes of Mrs. Weasley Goblet of Fire.'
+		'default' => 'I am a footer blurb. Change me in the WordPress customizer.', 
+		'sanitize_callback' => 'sanitize_text_field'
 	));
 
 	//Add a control for the footer blurb setting 
@@ -39,7 +40,8 @@ function slater_footer_settings($wp_customize) {
 
 	//Add the url setting to the database and provide a default value
 	$wp_customize->add_setting('slater_form_setting', array(
-		'default' => ''
+		'default' => '',
+		'sanitize_callback' => 'sanitize_text_field'
 	));
 
 	//Add a control for the setting 

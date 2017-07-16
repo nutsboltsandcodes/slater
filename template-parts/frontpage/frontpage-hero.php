@@ -2,7 +2,7 @@
 	
 	<div class="hero">
 	  <div class="hero__text-container">
-	    <h1 class="hero__text-title"><?php bloginfo('name'); ?></h1>
+	    <h1 class="hero__text-title"><?php bloginfo( 'name' ); ?></h1>
 	    <p class="hero__text-subtitle"><?php bloginfo('description'); ?></p>
 	  </div>
 	  <div class="hero__image-container">

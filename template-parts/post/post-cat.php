@@ -1,24 +1,33 @@
+<?php
+/**
+ * Template partial for displaying single post categories
+ *
+ * @link https://developer.wordpress.org/reference/functions/get_the_category/
+ *
+ * @package Slater
+ */
+?> 
+
 <?php 
 	
-	//Display categories if post has any
-	
+	//Display single post categories if any exist	
   $categories = get_the_category();
-  $separator = ' ';
-  $output = '';
-  if ( ! empty( $categories ) ) {
+  $separator  = ' ';
+  $output     = '';
 
-  		echo '<small class="article__meta-cat">Categories</small>';
-  		echo '<span class="article__meta-tags">';
+  if ( ! empty( $categories ) ) { ?>
 
-      foreach( $categories as $category ) {
+  		<small class="article__meta-cat">Categories</small>
+  		<span class="article__meta-tags">
 
+      <?php foreach( $categories as $category ) { 
+          
           $output .= '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '" alt="' . esc_attr( sprintf( __( 'View all posts in %s', 'textdomain' ), $category->name ) ) . '">' . esc_html( $category->name ) . '</a>' . $separator;
 
       }
 
-      echo $output;
+      echo $output; ?>
 
-      echo '</span>';
-  }
-
-?>
+      </span>
+      
+  <?php } ?>

@@ -1,7 +1,6 @@
-window.onload = function checkScroll() {
+window.onload = function onLoad() {
 	headerOnScroll();
 	mobileMenu();
-	commentsToggle();
 }
 
 window.onresize = function refreshHeader() {
@@ -42,25 +41,6 @@ function headerOnScroll() {
 	}
 }
 
-/*
-* Comments toggle functionality
-*/
-
-function commentsToggle() {
-
-	var nav 		= document.getElementById('comments__inner-container'),
-			toggle 	= document.getElementById('comments-toggle');
-
-	toggle.onclick = function() {
-		console.log('fuck');
-		if ( nav.className === "comments__inner-container" ) {
-			nav.className += " comments__inner-container--toggled";
-		} else {
-			nav.className = "comments__inner-container";
-		}
-	}
-}
-
 /* 
 * Add or remove a class to the navigation menu on click
 */
@@ -73,8 +53,10 @@ function mobileMenu() {
 	toggle.onclick = function() {
 		if ( nav.className === "top-nav__nav" ) {
 			nav.className += " top-nav__nav-vis";
+			toggle.style.backgroundImage = 'url("' + templateDir + '/dist/css/minified/menu_close.png")';
 		} else {
 			nav.className = "top-nav__nav";
+			toggle.style.backgroundImage = 'url("' + templateDir + '/dist/css/minified/menu-toggle.png")';
 		}
 	}
 }

@@ -1,4 +1,4 @@
-<?php /* Template Name: Page Specific Index */ ?>
+<?php /* Template Name: Sub-Index */ ?>
 <?php
 /**
  * The resuable page template for displaying a customized loop
@@ -10,9 +10,10 @@
 
 get_header(); ?>
 
-			
-			<!-- Hero Image and Title -->
-      <?php get_template_part( 'template-parts/page/page', 'hero' );?>
+      <?php 
+      	//Get the page specific hero image and title block
+      	get_template_part( 'template-parts/page/page', 'hero' );
+      ?>
 			
 			<div class="container center-block">
 	      <article class="article">	

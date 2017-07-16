@@ -22,7 +22,7 @@ if ( post_password_required() ) {
 
 <section class="container--100 center-block">
 	  <div class="comments__outer-container">
-	    <div  id="comments-toggle" class="comments__title-container">
+	    <div id="comments-toggle" class="comments__title-container">
 
 			<?php if ( have_comments() ) { 
 				//Get the number of comments 
@@ -31,7 +31,7 @@ if ( post_password_required() ) {
 	    	
 	    	<h2 class="comments__title">Comments &middot; <span class="comments__title-count"><?php echo $comment_count; ?></span></h2>
 
-	    	<span class="comments__title-toggle"></span>
+	    	<span id="comments__title-toggle" class="comments__title-toggle"></span>
 	    </div>
 	    <div id="comments__inner-container" class="comments__inner-container">
 	      <?php //Comment Form ?>
