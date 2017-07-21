@@ -52,27 +52,13 @@ a {
 
 blockquote {
 	margin: 0;
-}
-
-blockquote p {
 	border-left: $bq-border solid #068D9D;
 	font-family: $font-family;
 	padding: 1.5rem 1.5rem;
 	background: #EAF2F8;
 	line-height: $line-height-big;
 	font-style: italic;
-	font-size: 1.0rem;
-	font-weight: 300;
-	margin: 1.5rem 0;
-
-	@mixin atMedium {
-		font-size: 1.25rem;
-	}
-
-	@mixin atDesktop {
-		font-size: 1.5rem;
-	}
-
+	
 	cite {
 		display: block;
 		margin-top: 2rem;
@@ -90,6 +76,20 @@ blockquote p {
 
 	& mark {
 		background-color: #7FB3D5;
+	}
+}
+
+blockquote p {
+	font-size: 1.0rem;
+	font-weight: 300;
+	margin: 1.5rem 0;
+
+	@mixin atMedium {
+		font-size: 1.25rem;
+	}
+
+	@mixin atDesktop {
+		font-size: 1.5rem;
 	}
 }
 
