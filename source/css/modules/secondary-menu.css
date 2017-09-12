@@ -1,0 +1,67 @@
+.secondary-menu {
+	position: relative;
+	position: fixed;
+	width: 275px;
+	right: 0px;
+	background: rgba(21, 67, 96, .95);
+	height: 100%;
+	top: 0;
+	bottom: 0;
+	padding: 0 25px;
+	display: none;
+
+	&--vis {
+		display: block;
+		z-index: 100;
+	}
+
+	&--header {
+		display: block;
+		padding: 50px 10px 10px 0;
+		position: relative;
+		width: 100%;
+
+		&--nav {
+			list-style: none;
+			margin: 0;
+			padding: 0;
+
+			& li a {
+				color: #fff;
+				text-decoration: none;
+				font-size: 1.3rem;
+			}
+		}
+	}
+	
+	&--container {
+	}
+
+	&--nav{
+		list-style: none;
+		margin: 0;
+		padding: 0;
+
+		& li {
+			padding: 5px;
+			padding-left: 0;
+
+			& a {
+				text-decoration: none;
+			} 
+		}
+	}
+
+	&--vis {
+
+	}
+
+	&--toggle {
+		float: right;
+
+		& img {
+			height: 30px;
+			width: auto;
+		}
+	}
+}

@@ -26,6 +26,7 @@
 				<h1 class="monthly-focus__title"><?php echo get_theme_mod('slater_monthly_focus_headline'); ?></h1>
 				<a href="<?php echo get_permalink(get_theme_mod('slater_monthly_focus_link')); ?>" class="monthly-focus__desc_link"><p class="monthly-focus__desc"><?php echo get_theme_mod('slater_monthly_focus_text');?></p></a>
 			</div>
+
 			</article><!-- #main-article -->
 			<?php }	?>
 

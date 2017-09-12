@@ -22,8 +22,8 @@
       <article class="article">
         <div class="article__meta">
           <?php
-            //Post tags
-            get_template_part( 'template-parts/post/post', 'tags' );
+            //Post Categories
+            get_template_part( 'template-parts/post/post', 'cat' );
             //Post/update date
             get_template_part( 'template-parts/post/post', 'date' ); 
           ?>
@@ -32,10 +32,7 @@
 					<?php the_content(); ?>
         </div><?php //article__content ?>
         <div class="article__meta">
-          <?php
-            //Post Categories
-            get_template_part( 'template-parts/post/post', 'cat' );
-          ?>          
+          <?php get_template_part( 'template-parts/post/post', 'tags' ); ?>          
         </div>
       </article><?php //article ?>
 

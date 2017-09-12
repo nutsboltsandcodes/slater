@@ -1,4 +1,4 @@
-var gulp 				= require('gulp'),
+var gulp 				= require('gulp'), 
 		watch 			= require('gulp-watch'), 
 		autoPrefix 	= require('autoprefixer'), 
 		postcss 		= require('gulp-postcss'), 
@@ -7,60 +7,73 @@ var gulp 				= require('gulp'),
 		mixins 			= require('postcss-mixins'), 
 		nested 			= require('postcss-nested'),
 		cleanCSS 		= require('gulp-clean-css'), 
-		minify 			= require('gulp-minify');
+		minify 			= require('gulp-minify'), 
+		browserSync	= require('browser-sync').create(), 
+		webpack			= require('webpack');
 
+gulp.task('default', function() {  
+	console.log('Hooray, a gulp task! Try running "gulp watch" for PostCSS workflow, or not, your call.') 
+}); 
+  
+gulp.task('styles', function() { 
+	return	gulp.src('./source/css/*.css') 
+					.pipe(postcss([autoPrefix, importcss, vars, mixins, nested])) 
+					.on('error', function(errorInfo) { 
+						console.log(errorInfo.toString()); 
+						this.emit('end') 
+					}) 
+					.pipe(gulp.dest('./assets/css/')) 
+}); 
 
-gulp.task('default', function() {
-	console.log('Hooray, a gulp task! Try running "gulp watch" for PostCSS workflow, or not, your call.')
-});
-
-gulp.task('styles', function() {
-	return	gulp.src('./source/css/main.css')
-					.pipe(postcss([autoPrefix, importcss, vars, mixins, nested]))
-					.on('error', function(errorInfo) {
-						console.log(errorInfo.toString());
-						this.emit('end')
-					})
-					.pipe(gulp.dest('./dist/css/'))
-});
-
-gulp.task('minify-css', function() {
-    return gulp.src('./dist/css/main.css')
-        	.pipe(cleanCSS({compatibility: 'ie8'}, {debug: true}, function(details) {
-            console.log(details.name + ': ' + details.stats.originalSize);
-            console.log(details.name + ': ' + details.stats.minifiedSize);
-        	}))
-        	.on('error', function(errorInfo) {
-						console.log(errorInfo.toString());
-						this.emit('end');
-					})
-        	.pipe(gulp.dest('./dist/css/minified'));
-});
- 
-gulp.task('minify-js', function() {
-  gulp.src('source/js/*.js')
-    .pipe(minify({
-        ext:{
-            src:'-debug.js',
-            min:'.js'
-        }
+gulp.task('minify-css', ['styles'], function() {
+  return gulp.src('./assets/css/main.css')
+    .pipe(cleanCSS({debug: true}, function(details) {
+      console.log(details.name + ': ' + details.stats.originalSize);
+      console.log(details.name + ': ' + details.stats.minifiedSize);
     }))
-    .pipe(gulp.dest('dist/js/'))
+  .pipe(gulp.dest('./assets/css/mini'));
 });
 
-//Gulp Watch Task
-gulp.task('watch', function() {
+gulp.task('cssInject', ['minify-css'], function() {
+	return gulp.src('./assets/css/minified/main.css')
+		.pipe(browserSync.stream());
+});
 
-	watch('./source/css/**/*.css', function() {
-		gulp.start('styles');
+gulp.task('scripts', function() {
+	return gulp.src('./source/**/*.js')
+		.pipe(minify({
+			ext: {
+				min: '.js'
+			},
+			noSource: true,
+		}))
+		.pipe(gulp.dest('./assets/'))
+})
+
+gulp.task('scriptsRefresh', ['scripts'], function() {
+	browserSync.reload();
+})
+  
+//Gulp Watch Task 
+gulp.task('watch', function() { 
+  
+	browserSync.init({
+		notify: false,
+		proxy: "localhost/wordpress/"
 	});
 
-	watch('./dist/css/**/*.css', function() {
-		gulp.start('minify-css')
-	})
-
+	watch('./source/css/**/*.css', function() { 
+		gulp.start('cssInject'); 
+	}); 
+  
+	
 	watch('./source/js/**/*.js', function() {
-		gulp.start('minify-js');
-	})	
+		gulp.start('scriptsRefresh')
+	});
 
-});
+	watch('./**/*.php', function() {
+		browserSync.reload();
+	});
+  
+}); 
+

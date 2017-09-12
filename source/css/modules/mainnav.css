@@ -1,0 +1,119 @@
+header {
+	margin: 0;
+	padding: 10px;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 100;
+	background: rgba(21, 67, 96, 1);	
+	@mixin clearfix;
+	
+	@mixin atMedium {
+		background: rgba(21, 67, 96, .9);	
+	}
+
+	& .siteHeader {
+		
+		&__left {
+			float: none;
+			width: 100%;
+			margin-right: auto;
+			margin-left: auto;
+			
+			@mixin atMedium {
+				float: left;	
+				width: auto;
+			}			
+		
+			&-logo-link{
+				display: block;
+				max-width: 60px;
+				margin-left: auto;
+				margin-right: auto;
+				
+				@mixin atMedium {
+					display: inline-block;
+					max-width: 100px;
+					margin: 0;
+				}
+				& img {
+					max-height: 35px;
+					@mixin atMedium {
+						max-height: 55px;
+					}
+				}
+			}
+		
+			& .mobileMenuToggle {
+				display: block;
+				position: absolute;
+				top: 18px;
+				right: 18px;
+				color: white;
+				cursor: pointer;
+
+				@mixin atMedium {
+					display: none;	
+				}
+				
+			}
+		}
+
+		&__right {
+			display: none;
+			@mixin atMedium {
+				display: block;
+			}
+			float: right;
+
+			&--right {
+				float: right;
+				& .secondaryMenuToggle {
+					position: relative;
+					top: 19px;
+					color: white;
+					cursor: pointer;
+					margin-left: 10px;
+					z-index: 50;
+					&:hover {
+						color: #20b2aa;
+					}
+
+					&-toggled {
+						z-index: 101;
+					}
+				}
+			}
+
+			&--left {
+				float: left;
+				& nav ul {
+					list-style: none;
+					padding: 0;
+					margin: 0;
+					line-height: 39px;
+					& li {
+						display: inline-block;
+						padding: 10px 5px;
+						&::last {
+							padding-left: 0;
+						}
+						& a {
+							color: white;
+							font-weight: 500;
+							text-decoration: none;
+							font-size: 1.3rem;
+							@mixin atDesktop {
+								font-size: 1.5rem;	
+							}
+							&:hover {
+								color: #20b2aa;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

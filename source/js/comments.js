@@ -1,3 +1,4 @@
+/*
 window.onload = function onLoad() {
 	commentsToggle();
 }
@@ -18,3 +19,4 @@ function commentsToggle() {
 		}
 	}
 }
+*/

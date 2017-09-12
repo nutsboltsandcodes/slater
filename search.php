@@ -22,6 +22,7 @@
 
           <?php if ( have_posts() ) : ?>
 
+                <h2 class="text-center">Shall we <strong>Search</strong> again?</h2>
                 <?php get_search_form(); ?>
                 <hr>
                 <?php /* Start the Loop */ ?>
@@ -39,11 +40,7 @@
                   </div>
                    
 
-                <?php endwhile; ?>
-
-                <hr>
-                <h2 class="text-center">Shall we <strong>Search</strong> again?</h2>
-                <?php get_search_form(); ?>
+                <?php endwhile; ?>              
 
             <?php else : ?>
                 

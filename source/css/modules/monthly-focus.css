@@ -2,7 +2,7 @@
 
 	&__container {
 		padding: 25px 10px;
-		background-image: url('pattern.png');
+		background-image: url('../../images/default/patterns/pattern.png');
 		background-size: contain;
 		text-align: center;
 		margin-bottom: 0;
@@ -33,7 +33,7 @@
 	&__desc:before {
 		content: "";
     display: inline-block;
-    background: url("goal.png") no-repeat;
+    background: url("../../images/icons/social/goal.png") no-repeat;
     width: 30px;
     height: 30px;
     margin: 0 10px 0 0;

@@ -1,16 +1,40 @@
-window.onload = function onLoad() {
-	headerOnScroll();
-	mobileMenu();
-}
+jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
 
-window.onresize = function refreshHeader() {
-	headerOnScroll();
-}
+	feather.replace(); //feathericon init
 
-window.onscroll = function() {
-	headerOnScroll();
-};
+	/*
+	* Show and Hide functionality for the secondary header menu
+	*/
+	function toggleSecondaryMenu() {
+		var menuCont = $('.secondary-menu');
+		var toggle = $('.secondaryMenuToggle');
+		toggle.on('click', function() {
+			menuCont.addClass('secondary-menu--vis');
+			toggle.toggleClass('secondaryMenuToggle-toggled')
+		});
+	}
+	toggleSecondaryMenu();
 
+	function toggleMobileMenu() {
+		var menuCont 	= $('.mobileMenu');
+		var toggle 		= $('.mobileMenuToggle');
+		var close			= $('.mobileMenuClose');
+		toggle.on('click', function() {
+			menuCont.toggleClass('mobileMenu--vis');
+		});
+		close.on('click', function() {
+			menuCont.toggleClass('mobileMenu--vis');
+		});
+	}
+
+	toggleMobileMenu();
+
+});
+
+
+
+
+/*
 function headerOnScroll() {
 
 	//Define viewport variables
@@ -40,23 +64,4 @@ function headerOnScroll() {
 		document.getElementsByClassName('top-nav__container')[0].style.background = "rgba(21, 67, 96, 1)";
 	}
 }
-
-/* 
-* Add or remove a class to the navigation menu on click
 */
-
-function mobileMenu() {
-
-	var nav 		= document.getElementsByTagName('nav')[0],
-			toggle 	= document.getElementById('top-nav__toggle');
-
-	toggle.onclick = function() {
-		if ( nav.className === "top-nav__nav" ) {
-			nav.className += " top-nav__nav-vis";
-			toggle.style.backgroundImage = 'url("' + templateDir + '/dist/css/minified/menu_close.png")';
-		} else {
-			nav.className = "top-nav__nav";
-			toggle.style.backgroundImage = 'url("' + templateDir + '/dist/css/minified/menu-toggle.png")';
-		}
-	}
-}
