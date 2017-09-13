@@ -6,7 +6,7 @@ while ( have_posts() ) : the_post(); { ?>
 	<div class="hero">
 	  <div class="hero__text-container">
 	    <h1 class="hero__text-title"><?php the_title(); ?></h1>
-	    <p class="hero__text-subtitle"><?php echo get_post_meta( get_the_ID(), 'Post Subtitle', true); ?></p>
+	    <p class="hero__text-subtitle"><?php echo the_field( 'page_subtitle' ); ?></p>
 	  </div>
 	  <div class="hero__image-container">
 		<?php 

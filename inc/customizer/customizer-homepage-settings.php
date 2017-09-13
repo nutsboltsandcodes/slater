@@ -6,6 +6,7 @@
 
 function slater_home_page_settings($wp_customize) {
 
+	/*
 	//Add section to WP customizer
 	$wp_customize->add_section('slater_home_page_section', array(
 		'title' => 'Home Page Settings'
@@ -71,6 +72,7 @@ function slater_home_page_settings($wp_customize) {
 		'section' => 'slater_home_page_section', 
 		'settings' => 'slater_theme_logo_setting', 
 	)));
+	*/
 
 }
 

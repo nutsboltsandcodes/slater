@@ -8,60 +8,40 @@
 	top: 0;
 	bottom: 0;
 	padding: 0 25px;
-	display: none;
+	transform: translateX(40000px);
+	transition: transform 100ms ease-in;
 
 	&--vis {
-		display: block;
-		z-index: 100;
+		transform: translateX(0);
+		z-index: 300;
 	}
 
-	&--header {
-		display: block;
-		padding: 50px 10px 10px 0;
-		position: relative;
-		width: 100%;
-
-		&--nav {
-			list-style: none;
-			margin: 0;
-			padding: 0;
-
-			& li a {
-				color: #fff;
-				text-decoration: none;
-				font-size: 1.3rem;
-			}
-		}
+	& .secondaryMenuToggleClose {
+		position: absolute;
+		top: 10px;
+		right: 10px;
+		color: white;
+		cursor: pointer;
 	}
-	
+
 	&--container {
+		margin-top: 50px;
 	}
 
-	&--nav{
+	&--nav {
 		list-style: none;
 		margin: 0;
 		padding: 0;
-
 		& li {
-			padding: 5px;
-			padding-left: 0;
-
+			display: block;
+			padding: 8px;
 			& a {
+				color: white;
 				text-decoration: none;
-			} 
+				&:hover {
+					color: #20b2aa;
+				}
+			}
 		}
-	}
-
-	&--vis {
-
-	}
-
-	&--toggle {
-		float: right;
-
-		& img {
-			height: 30px;
-			width: auto;
-		}
-	}
+	}	
 }

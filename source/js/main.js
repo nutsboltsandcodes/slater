@@ -6,19 +6,33 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
 	* Show and Hide functionality for the secondary header menu
 	*/
 	function toggleSecondaryMenu() {
-		var menuCont = $('.secondary-menu');
-		var toggle = $('.secondaryMenuToggle');
+		var menuCont = $('.secondary-menu'),
+				toggle = $('.secondaryMenuToggle'), 
+				toggleClose = $('.secondaryMenuToggleClose'),
+				overlay 	= $('.overlay');
 		toggle.on('click', function() {
 			menuCont.addClass('secondary-menu--vis');
 			toggle.toggleClass('secondaryMenuToggle-toggled')
+			overlay.toggleClass('overlay--vis');
+		});
+		overlay.on('click', function() {
+			menuCont.toggleClass('secondary-menu--vis');
+			overlay.toggleClass('overlay--vis');
+		});
+		toggleClose.on('click', function() {
+			menuCont.toggleClass('secondary-menu--vis');
+			overlay.toggleClass('overlay--vis');
 		});
 	}
 	toggleSecondaryMenu();
 
+	/*
+	* Show and Hide functionality for the mobile menu
+	*/
 	function toggleMobileMenu() {
-		var menuCont 	= $('.mobileMenu');
-		var toggle 		= $('.mobileMenuToggle');
-		var close			= $('.mobileMenuClose');
+		var menuCont 	= $('.mobileMenu'), 
+				toggle 		= $('.mobileMenuToggle'),
+				close			= $('.mobileMenuClose');
 		toggle.on('click', function() {
 			menuCont.toggleClass('mobileMenu--vis');
 		});
@@ -26,7 +40,6 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
 			menuCont.toggleClass('mobileMenu--vis');
 		});
 	}
-
 	toggleMobileMenu();
 
 });

@@ -21,6 +21,8 @@
 </head>
 <body <?php body_class(); ?>>
 
+    <div class="overlay"></div>
+
     <header id="siteHeader" role="banner">
     
       <div class="siteHeader__left">
@@ -50,12 +52,7 @@
     
 
     <aside class="secondary-menu">
-      <nav class="secondary-menu--header">
-        <i class="secondaryMenuToggle" data-feather="x"></i>
-        <ul class="secondary-menu--header--nav">
-          <li><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></li>
-        </ul>
-      </nav>
+        <i class="secondaryMenuToggleClose" data-feather="x"></i>
       <?php 
         // Display the Navigation Menu: Secondary
         wp_nav_menu(
