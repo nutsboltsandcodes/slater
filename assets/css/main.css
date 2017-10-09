@@ -1032,6 +1032,7 @@ pre {
 		position: relative;
 		margin-top: 5px;
 		transition: margin-top .75s linear;
+		word-break: break-word;
 
 }
 
