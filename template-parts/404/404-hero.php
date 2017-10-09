@@ -6,7 +6,7 @@
 	    <p class="hero__text-subtitle"><?php esc_html_e( 'Not all those who wander are lost... but we sure are. Where to next?', 'slater' ); ?></p>
 	  </div>
 	  <div class="hero__image-container">
-				<img src="<?php bloginfo('template_directory'); ?>/assets/images/default/hero/404.jpeg" alt="<?php the_title(); ?>">
+				<img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/default/hero/404.jpeg" alt="<?php the_title(); ?>">
 		</div>
 	</div>
 

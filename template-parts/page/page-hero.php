@@ -13,7 +13,7 @@ while ( have_posts() ) : the_post(); { ?>
 			if ( has_post_thumbnail() ) {
 				the_post_thumbnail();
 			} else { ?>
-				<img src="<?php bloginfo('template_directory'); ?>/images/default-hero.jpg" alt="<?php the_title(); ?>" />
+				<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/default-hero.jpg" alt="<?php the_title(); ?>" />
 			<?php } 
 		?>
 		</div>

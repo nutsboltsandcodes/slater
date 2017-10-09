@@ -25,14 +25,14 @@ $muted-color: #CACFD2;
 
 /* Line Hieghts */
 
-$line-height-big: 1.6em;
-$line-height-default: 1.5em;
+$line-height-big: 1.7em;
+$line-height-default: 1.6em;
 $line-height-small: 1.2em;
 $h1-line-hieght: 1.4em;
 
 /* Font Sizes - Headlines */
 
-$para-font-size: 1.2rem; 
+$para-font-size: 1.23rem; 
 $h1-font-size-mobile: 1.5rem;
 $h1-font-size-medium: 2.0rem;
 $h1-font-size-desktop: 2.1rem;
@@ -44,7 +44,7 @@ $bq-border: 10px;
 /* Container Styles */
 
 $container-large: 900px;
-$container-default: 700px;
+$container-default: 725px;
 $container-small: 500px;
 $max-container-width: 95%;
 

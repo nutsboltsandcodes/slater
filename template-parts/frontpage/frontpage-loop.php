@@ -7,7 +7,7 @@
 	
 	endwhile; else: 
   
-    _e( 'Sorry, no posts found! Add some in the Admin dashboard.', 'textdomain' );
+    _e( 'Sorry, no posts found! Add some in the Admin dashboard.', 'slater' );
 
 	endif; 
 

@@ -31,13 +31,10 @@ if ( post_password_required() ) {
 	    	
 	    	<h2 class="comments__title">Comments &middot; <span class="comments__title-count"><?php echo $comment_count; ?></span></h2>
 
-	    	<span id="comments__title-toggle" class="comments__title-toggle"></span>
 	    </div>
-	    <div id="comments__inner-container" class="comments__inner-container">
+	    <div class="comments__inner-container">
 	      <?php //Comment Form ?>
 	      <h2>Join the Discussion.</h2>
-	      <p class="muted no-margin">Your infomation will never be published or sold.</p>
-	      <p class="muted no-margin">All comments must be approved before they will be displayed.</p>
 
 	      <ul class="comment-list">
 		      <?php
@@ -66,12 +63,10 @@ if ( post_password_required() ) {
 
 	    <?php } else { ?>
 				
-				<h2 class="comments__title">Comments &middot; <span class="comments__title-count"><small>Be the first to comment!</small></span></h2>	<span id="comments__title-toggle" class="comments__title-toggle"></span>
+				<h2 class="comments__title">Comments &middot; <span class="comments__title-count"><small>Be the first to comment!</small></span></h2>
 	    </div>
 	    <div id="comments__inner-container" class="comments__inner-container">
 	      <?php //Comment Form ?>
-	      <p class="muted no-margin">Your infomation will never be published or sold.</p>
-	      <p class="muted no-margin">All comments must be approved before they will be displayed.</p>
 
 	      <ol class="comment-list">
 		      <?php

@@ -1,0 +1,18 @@
+.top-scroll {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 10;
+	padding: 10px;
+	background: #20b2aa;
+	margin-right: 12px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	color: white;
+
+	@mixin atMedium {
+		padding: 15px;
+		margin-right: 25px;
+		padding-bottom: 4px;
+	}
+}

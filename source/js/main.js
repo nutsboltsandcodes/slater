@@ -42,10 +42,19 @@ jQuery(function($) { // DOM is now ready and jQuery's $ alias sandboxed
 	}
 	toggleMobileMenu();
 
+	/*
+	* Show and Hide functionality for the comments section
+	*/
+	function toggleComments() {
+		var commentsCont 		= $('.comments__inner-container'), 
+				commentsHeaderBox	= $('.comments__title-container');
+		commentsHeaderBox.on('click', function() {
+			commentsCont.toggleClass('comments__inner-container--vis');
+		});
+	}
+	toggleComments();
+
 });
-
-
-
 
 /*
 function headerOnScroll() {

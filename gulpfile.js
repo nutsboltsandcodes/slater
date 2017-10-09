@@ -1,4 +1,4 @@
-var gulp 				= require('gulp'), 
+	var gulp 				= require('gulp'), 
 		watch 			= require('gulp-watch'), 
 		autoPrefix 	= require('autoprefixer'), 
 		postcss 		= require('gulp-postcss'), 
@@ -59,7 +59,8 @@ gulp.task('watch', function() {
   
 	browserSync.init({
 		notify: false,
-		proxy: "localhost/wordpress/"
+		proxy: "localhost/wordpress/", 
+		online: false
 	});
 
 	watch('./source/css/**/*.css', function() { 
@@ -76,4 +77,3 @@ gulp.task('watch', function() {
 	});
   
 }); 
-

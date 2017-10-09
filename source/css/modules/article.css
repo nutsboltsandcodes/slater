@@ -1,6 +1,6 @@
 .article {
 		background: #FBFCFC;
-		padding: 20px 25px;
+		padding: 20px 35px;
 		padding-bottom: 40px;
 		position: relative;
 		margin-top: 5px;
@@ -65,6 +65,7 @@
 		width: auto;
 		max-width: 100% !important;
 		height: auto !important;
+		box-shadow: 0 0 18px grey;
 	}
 
 	& .extend {
@@ -88,4 +89,44 @@
 		max-width: 100% !important;	
 	}
 
+	&--project {
+		display: block;
+		margin-top: 40px;
+		@mixin clearfix;
+
+		&-left {
+			padding: 5px;
+			margin: 0;
+			display: block;
+			width: 100%;
+
+			@mixin atMedium {
+				float: left;
+				width: 50%;
+			}			
+
+			& h1 {
+				margin: 0;
+				padding: 0;
+
+				& a {
+					font-size: 2.3rem;
+					text-decoration: none;
+				}
+			}
+		}
+
+		&-right {
+			width: 100%;
+			display: block;
+			padding: 0;
+			margin: 0;
+			@mixin atMedium {
+				float: right;
+				width: 50%;	
+			}
+		}
+	}
+
 }
+

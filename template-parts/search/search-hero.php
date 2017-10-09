@@ -6,7 +6,7 @@
 	    <p class="hero__text-subtitle"><?php esc_html_e( 'Heres what I found.', 'slater' ); ?></p>
 	  </div>
 	  <div class="hero__image-container">
-				<img src="<?php bloginfo('template_directory'); ?>/images/404-2.jpeg" alt="<?php the_title(); ?>">
+				<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/404-2.jpeg" alt="<?php the_title(); ?>">
 		</div>
 	</div>
 

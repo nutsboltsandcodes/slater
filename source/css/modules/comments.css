@@ -13,11 +13,12 @@
 		background: #FBFCFC;
 		@mixin clearfix;
 		z-index: 5;
+		transition: box-shadow .250s ease-in;
+		margin-bottom: 16px;
 
 		&:hover {
 			cursor: pointer;
-			position: relative;
-			top: 2px;
+			box-shadow: 0 0 10px grey;
 		}
 
 		@mixin atMedium {
@@ -44,13 +45,14 @@
 			width: 24px;
 			display: inline-block;
 			float: right;
-			background-image: url('chevrons-down.svg');
+			background-image: url('../../images/icons/toggle/chevrons-down.svg');
 			background-size: cover;
 			cursor: pointer;
+			z-index: 2;
 		}
 
 		&-toggle:hover {
-			background-image: url('chevrons-down-hover.svg');
+			background-image: url('../../images/icons/toggle/chevrons-down-hover.svg');
 		}
 	}
 
@@ -58,14 +60,13 @@
 		display: none;
  		background: #FBFCFC;
  		padding: 10px 25px;
- 		transition: display 1s linear;
 
  		& textarea {
 			height: 150px;
 		}
 	}
 
-	&__inner-container--toggled {
+	&__inner-container--vis {
 		display: block !important;
 	}
 }
@@ -104,9 +105,10 @@
 			height: 50px;
 
 			& img {
-				height: 50px;
-				width: 50px;
+				min-height: 50px;
 				border-radius: 75px;
+				max-height: 50px;
+				max-width: 50px;
 			}
 
 			& .fn {
@@ -123,9 +125,15 @@
 
 				& .url {
 					font-size: 1.0rem;
+					text-decoration: none;
 
 					@mixin atMedium {
 						font-size: 1.2rem;		
+					}
+
+					&:hover {
+						text-decoration: underline;
+						color: #20b2aa;
 					}
 				}
 			}
@@ -143,13 +151,18 @@
 			& a {
 				font-size: 0.75rem;
 				text-decoration: none;
+
+				&:hover {
+					text-decoration: underline;
+					color: #20b2aa;
+				}
 			}
 		}	
 	}
 
-.comment-awaiting-moderation {
-			display: none;
-		}
+	.comment-awaiting-moderation {
+		display: none;
+	}
 
 	&-content {
 		border: solid 1px #2c5570;
@@ -160,19 +173,23 @@
 	& .reply {
 		display: block;
 		width: 100%;
-	}
-
-	&-reply-link {
-		text-decoration: none;
 		width: 100%;
-		font-size: 1.0rem;
-		padding: 6px 10px;
-		display: inline-block;
+		
 		border: solid 1px #2c5570;
 		border-bottom-right-radius: 5px;
 		border-bottom-left-radius: 5px;
 		border-top: none;
+		@mixin clearfix;
+	}
+
+	&-reply-link {
+		padding: 6px 20px;
+		text-decoration: none;
+		font-size: 1.0rem;		
+		display: inline-block;		
 		text-align: center;
+		float: right;
+		width: 25%;
 	}
 
 	&-reply-link:hover {

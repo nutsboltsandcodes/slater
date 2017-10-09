@@ -14,9 +14,8 @@
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="profile" href="http://gmpg.org/xfn/11">
-  <link rel="icon" href="favicon.ico">
   <script>
-  var templateDir = "<?php bloginfo('template_directory'); ?>"; </script>
+  var templateDir = "<?php echo esc_url(get_template_directory_uri()); ?>"; </script>
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -26,7 +25,7 @@
     <header id="siteHeader" role="banner">
     
       <div class="siteHeader__left">
-        <a href="<?php bloginfo('url'); ?>" class="siteHeader__left-logo-link"><img alt="<?php bloginfo('title'); ?>" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo/logo.png"></a><!-- #logo -->
+        <a href="<?php echo esc_url(home_url()); ?>" class="siteHeader__left-logo-link"><img alt="<?php bloginfo('title'); ?>" src="<?php echo get_template_directory_uri(); ?>/assets/images/logo/logo.png"></a><!-- #logo -->
         <i class="mobileMenuToggle" data-feather="menu"></i>
       </div><!-- #left --> 
 

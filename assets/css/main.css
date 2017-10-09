@@ -667,7 +667,7 @@ html {
 body {
 	background-color: #E5E7E9;
 	font-family: Roboto, sans-serif;
-	line-height: 1.5em;
+	line-height: 1.6em;
 }
 
 /* Reset various properties */
@@ -821,22 +821,22 @@ h1 {
 
 p {
 	font-weight: 100;
-	line-height: 1.5em;
+	line-height: 1.6em;
 	color: #424949;
-	font-size: 1.2rem;
+	font-size: 1.23rem;
 }
 
 @media (min-width: 600px) {
 
 p {
-		font-size: 1.2rem
+		font-size: 1.23rem
 }
 	}
 
 /* Link styles */
 
 a {
-	font-size: 1.2rem;
+	font-size: 1.23rem;
 	color: #20B2AA;
 }
 
@@ -857,7 +857,7 @@ blockquote {
 	font-family: Roboto, sans-serif;
 	padding: 1.5rem 1.5rem;
 	background: #EAF2F8;
-	line-height: 1.6em;
+	line-height: 1.7em;
 	font-style: italic;
 }
 
@@ -1016,7 +1016,7 @@ pre {
 
 .article {
 		background: #FBFCFC;
-		padding: 20px 25px;
+		padding: 20px 35px;
 		padding-bottom: 40px;
 		position: relative;
 		margin-top: 5px;
@@ -1089,6 +1089,7 @@ pre {
 		width: auto;
 		max-width: 100% !important;
 		height: auto !important;
+		box-shadow: 0 0 18px grey;
 	}
 
 .article .extend {
@@ -1113,6 +1114,57 @@ pre {
 
 .article iframe {
 		max-width: 100% !important;	
+	}
+
+.article--project {
+		display: block;
+		margin-top: 40px;
+	}
+
+.article--project::after, .article--project::before {
+		content: "";
+		clear: both;
+		display: table;
+	}
+
+.article--project-left {
+			padding: 5px;
+			margin: 0;
+			display: block;
+			width: 100%;
+		}
+
+@media (min-width: 600px) {
+
+.article--project-left {
+				float: left;
+				width: 50%
+		}
+	}
+
+.article--project-left h1 {
+				margin: 0;
+				padding: 0;
+			}
+
+.article--project-left h1 a {
+					font-size: 2.3rem;
+					text-decoration: none;
+				}
+
+.article--project-right {
+			width: 100%;
+			display: block;
+			padding: 0;
+			margin: 0;
+		}
+
+@media (min-width: 600px) {
+
+.article--project-right {
+				float: right;
+				width: 50%
+		}
 	}
 
 .social-sidebar {
@@ -1152,6 +1204,8 @@ pre {
 		padding: 10px 15px;
 		background: #FBFCFC;
 		z-index: 5;
+		transition: box-shadow .250s ease-in;
+		margin-bottom: 16px;
 	}
 
 .comments__title-container::after, .comments__title-container::before {
@@ -1162,8 +1216,7 @@ pre {
 
 .comments__title-container:hover {
 			cursor: pointer;
-			position: relative;
-			top: 2px;
+			box-shadow: 0 0 10px grey;
 		}
 
 @media (min-width: 600px) {
@@ -1196,27 +1249,27 @@ pre {
 			width: 24px;
 			display: inline-block;
 			float: right;
-			background-image: url('chevrons-down.svg');
+			background-image: url('../../images/icons/toggle/chevrons-down.svg');
 			background-size: cover;
 			cursor: pointer;
+			z-index: 2;
 		}
 
 .comments__title-toggle:hover {
-			background-image: url('chevrons-down-hover.svg');
+			background-image: url('../../images/icons/toggle/chevrons-down-hover.svg');
 		}
 
 .comments__inner-container {
 		display: none;
  		background: #FBFCFC;
  		padding: 10px 25px;
- 		transition: display 1s linear;
 	}
 
 .comments__inner-container textarea {
 			height: 150px;
 		}
 
-.comments__inner-container--toggled {
+.comments__inner-container--vis {
 		display: block !important;
 	}
 
@@ -1261,9 +1314,10 @@ pre {
 		}
 
 .comment-meta .comment-author img {
-				height: 50px;
-				width: 50px;
+				min-height: 50px;
 				border-radius: 75px;
+				max-height: 50px;
+				max-width: 50px;
 			}
 
 .comment-meta .comment-author .fn {
@@ -1284,6 +1338,7 @@ pre {
 
 .comment-meta .comment-author .fn .url {
 					font-size: 1.0rem;
+					text-decoration: none;
 				}
 
 @media (min-width: 600px) {
@@ -1292,6 +1347,11 @@ pre {
 						font-size: 1.2rem
 				}
 	}
+
+.comment-meta .comment-author .fn .url:hover {
+						text-decoration: underline;
+						color: #20b2aa;
+					}
 
 .comment-meta .comment-author .says {
 				display: none;
@@ -1308,9 +1368,14 @@ pre {
 				text-decoration: none;
 			}
 
+.comment-meta .comment-metadata a:hover {
+					text-decoration: underline;
+					color: #20b2aa;
+				}
+
 .comment .comment-awaiting-moderation {
-			display: none;
-		}
+		display: none;
+	}
 
 .comment-content {
 		border: solid 1px #2c5570;
@@ -1321,19 +1386,28 @@ pre {
 .comment .reply {
 		display: block;
 		width: 100%;
-	}
-
-.comment-reply-link {
-		text-decoration: none;
 		width: 100%;
-		font-size: 1.0rem;
-		padding: 6px 10px;
-		display: inline-block;
+		
 		border: solid 1px #2c5570;
 		border-bottom-right-radius: 5px;
 		border-bottom-left-radius: 5px;
 		border-top: none;
+	}
+
+.comment .reply::after, .comment .reply::before {
+		content: "";
+		clear: both;
+		display: table;
+	}
+
+.comment-reply-link {
+		padding: 6px 20px;
+		text-decoration: none;
+		font-size: 1.0rem;		
+		display: inline-block;		
 		text-align: center;
+		float: right;
+		width: 25%;
 	}
 
 .comment-reply-link:hover {
@@ -1343,7 +1417,7 @@ pre {
 	}
 
 .container {
-	width: 700px;
+	width: 725px;
 	max-width: 95%;
 }
 
@@ -1441,7 +1515,7 @@ label {
 textarea {
 	overflow: auto;
 	height: auto;
-	line-height: 1.5em;
+	line-height: 1.6em;
 	color: #424949;
 }
 
@@ -2078,10 +2152,13 @@ a.btn:hover {
 
 .secondary-menu .secondaryMenuToggleClose {
 		position: absolute;
-		top: 10px;
-		right: 10px;
-		color: white;
+		top: 25px;
+		right: 15px;
+		color: #fff;
+		width: 25px;
 		cursor: pointer;
+		font-size: 40px;
+		transform: scale(1.45);
 	}
 
 .secondary-menu--container {
@@ -2121,4 +2198,26 @@ a.btn:hover {
 
 .overlay--vis {
 		display: block;
+	}
+
+.top-scroll {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 10;
+	padding: 10px;
+	background: #20b2aa;
+	margin-right: 12px;
+	border-top-right-radius: 10px;
+	border-top-left-radius: 10px;
+	color: white;
+}
+
+@media (min-width: 600px) {
+
+.top-scroll {
+		padding: 15px;
+		margin-right: 25px;
+		padding-bottom: 4px
+}
 	}
