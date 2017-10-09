@@ -38,7 +38,7 @@
                   <div id="slater" class="article--project">
                         <div class="article--project-left">
                               <h1><a href="https://github.com/nutsboltsandcodes/slater" target="blank">Slater | WP Theme</a></h1>
-                              <p>My "first" WordPress theme! In fact, it is the theme your looking at the theme right now (how meta). Still progressing and changing, follow along on Github or message me and let me know what you think!</p>
+                              <p>My "first" WordPress theme! In fact, it is the theme your looking at the theme right now (how meta). Still progressing and changing, follow along on Github or <a href="https://nutsboltsandcodes.com/contact-me/">message me</a> and let me know what you think!</p>
                               <a class="btn" href="https://github.com/nutsboltsandcodes/slater" target="blank">Take a Look</a>
                         </div>
                         <div class="article--project-right">
