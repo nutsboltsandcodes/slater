@@ -26,14 +26,27 @@
       	<article class="article">
       		<div id="wpgen" class="article--project">
       			<div class="article--project-left">
-      				<h1><a href="#!">WP-GEN</a></h1>
+      				<h1><a href="http://wp-gen.com/" target="blank">WP-GEN</a></h1>
       				<p>A web app to quickly and easily generate custom WordPress snippets for developing WordPress themes and Plugins!</p>
+                              <a class="btn" href="http://wp-gen.com/" target="blank">Take a Look</a>
       			</div>
       			<div class="article--project-right">
-      				<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/sidebar-gen.png">
+      				<a href="http://wp-gen.com/" target="blank"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/projects/wpgen.png"></a>
       			</div>
       		</div>
 
+                  <div id="slater" class="article--project">
+                        <div class="article--project-left">
+                              <h1><a href="https://github.com/nutsboltsandcodes/slater" target="blank">Slater | WP Theme</a></h1>
+                              <p>My "first" WordPress theme! In fact, it is the theme your looking at the theme right now (how meta). Still progressing and changing, follow along on Github or message me and let me know what you think!</p>
+                              <a class="btn" href="https://github.com/nutsboltsandcodes/slater" target="blank">Take a Look</a>
+                        </div>
+                        <div class="article--project-right">
+                              <a href="https://github.com/nutsboltsandcodes/slater" target="blank"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/projects/slater.png"></a>
+                        </div>
+                  </div>
+
+                  <!--
       		<div id="wpgen" class="article--project">
       			<div class="article--project-left">
       				<h1><a href="#!">Microblogger</a></h1>
@@ -43,6 +56,7 @@
       				<img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/microblogger.png">
       			</div>
       		</div>
+                  -->
 
       	</article>
 

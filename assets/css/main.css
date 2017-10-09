@@ -1157,13 +1157,16 @@ pre {
 			display: block;
 			padding: 0;
 			margin: 0;
+			margin-top: 20px;
+			padding-left: 20px;
 		}
 
 @media (min-width: 600px) {
 
 .article--project-right {
 				float: right;
-				width: 50%
+				width: 50%;	
+				padding-top: 35px
 		}
 	}
 
