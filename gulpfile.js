@@ -76,4 +76,4 @@ gulp.task('watch', function() {
 		browserSync.reload();
 	});
   
-}); 
+});
