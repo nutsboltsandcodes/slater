@@ -1,7 +1,11 @@
 .comments {
 
 	&__outer-container {
-		margin-top: 0;
+		margin-top: 10px;
+		
+		@mixin atMedium {
+			margin-top: 0;	
+		}		
 
 		@mixin atMedium {
 			margin-top: 5px;

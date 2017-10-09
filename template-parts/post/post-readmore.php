@@ -11,7 +11,7 @@ $query = new WP_Query( $args );
 
 // The Loop
 if ( $query->have_posts() ) { ?>
-	<div class="row">
+	<div class="row hide-small">
 	
 		<?php while ( $query->have_posts() ) {
 			$query->the_post(); ?>
@@ -32,9 +32,11 @@ if ( $query->have_posts() ) { ?>
 
 						if ( $comment_count == 0 ) {
 							$comment_count = "";
+						} elseif ( $comment_count == 1) {
+							$comment_count = "| " . $comment_count . " comment";
 						} else {
 							$comment_count = "| " . $comment_count . " comments";
-						}
+						} 
 
 						if ( get_the_time() == get_the_modified_time() ) { ?>
 							<small class="muted"><?php the_modified_date('F j, Y'); ?> <?php echo $comment_count; ?></small>

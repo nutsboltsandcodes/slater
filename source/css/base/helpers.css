@@ -96,3 +96,10 @@
 	margin-right: auto;
 	margin-left: auto;
 }
+
+.hide-small {
+	display: none !important;
+	@mixin atMedium {
+		display: flex !important;
+	}
+}
