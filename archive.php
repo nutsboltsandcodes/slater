@@ -26,7 +26,7 @@ get_header(); ?>
 			
 						<h1 class="index-headline"><a href="<?php echo the_permalink(); ?>"><?php the_title(); ?></a></h1>
 					
-						<p class="index-excerpt"><?php echo get_post_meta( get_the_ID(), 'Post Subtitle', true); ?><!-- Post/Update date -->
+						<p class="index-excerpt"><?php the_excerpt(); ?><!-- Post/Update date -->
         		<?php get_template_part( 'template-parts/post', 'date' );?></p>
 
 					

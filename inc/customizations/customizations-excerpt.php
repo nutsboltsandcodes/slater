@@ -7,7 +7,7 @@
  * @return int (Maybe) modified excerpt length.
  */
 function slater_custom_excerpt_length( $length ) {
-    return 20;
+    return 35;
 }
 add_filter( 'excerpt_length', 'slater_custom_excerpt_length', 999 );
 

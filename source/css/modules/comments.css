@@ -108,6 +108,7 @@
 				min-height: 50px;
 				border-radius: 75px;
 				max-height: 50px;
+				width: auto;
 				max-width: 50px;
 			}
 

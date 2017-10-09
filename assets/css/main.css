@@ -1317,6 +1317,7 @@ pre {
 				min-height: 50px;
 				border-radius: 75px;
 				max-height: 50px;
+				width: auto;
 				max-width: 50px;
 			}
 
@@ -2211,6 +2212,7 @@ a.btn:hover {
 	border-top-right-radius: 10px;
 	border-top-left-radius: 10px;
 	color: white;
+	margin-bottom: -10px;
 }
 
 @media (min-width: 600px) {
@@ -2218,6 +2220,7 @@ a.btn:hover {
 .top-scroll {
 		padding: 15px;
 		margin-right: 25px;
-		padding-bottom: 4px
+		padding-bottom: 4px;
+		margin-bottom: 0
 }
 	}

@@ -26,9 +26,9 @@
 
     <div class="container center-block">
       <div class="footer__social-container">
-        <a href="https://github.com/WyattCast44" target="_blank"><img alt="Github" class="footer__social" src="<?php echo esc_url(get_template_directory_uri()); ?>/images/github.svg" ></a>
-        <a href="https://twitter.com/WyattCastaned44" target="_blank"><img alt="Twitter" class="footer__social" src="<?php echo esc_url(get_template_directory_uri()); ?>/images/twitter.svg"></a>
-        <a href="https://drive.google.com/drive/folders/0B5pmzJZZXrXxRW5Dam9rZk5tWFU?usp=sharing" target="_blank"><img alt="Google Drive" class="footer__social" src="<?php echo esc_url(get_template_directory_uri()); ?>/images/google.svg"></a>
+        <a href="https://github.com/WyattCast44" target="_blank"><img alt="Github" class="footer__social" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/icons/social/github.svg" ></a>
+        <a href="https://twitter.com/WyattCastaned44" target="_blank"><img alt="Twitter" class="footer__social" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/icons/social/twitter.svg"></a>
+        <a href="https://linkedin.com/in/wyatt-castaneda-759669101" target="_blank"><img alt="Twitter" class="footer__social" src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/images/icons/social/linkedin.svg"></a>
       </div>
     </div>
 
