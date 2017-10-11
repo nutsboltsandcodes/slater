@@ -20,7 +20,8 @@
 
       <article class="article">
 
-      <h1 style="text-align: center;">Hi there, my names Wyatt, &amp; I'm a self-taught web designer/developer!</h1>
+      <h1 style="text-align: center;">Hi there, my names Wyatt, &amp; I'm </h1>
+      <h1 style="text-align: center;">a web designer/developer!</h1>
 			
 				<?php get_template_part('template-parts/frontpage/frontpage', 'loop'); ?>
 
