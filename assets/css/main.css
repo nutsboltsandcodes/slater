@@ -691,6 +691,11 @@ img {
 	filter: darken(10%);
 }
 
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 /* Text Alignment Helper Classes */
 
 .text-center {
@@ -946,6 +951,7 @@ pre code {
   overflow: auto;
   background-color: #333;
   box-shadow: 2px 3px 20px rgba(0,0,0,.1);
+  word-break: normal;
 }
 
 pre {
@@ -956,6 +962,7 @@ pre {
   background-color: #333;
   box-shadow: 2px 3px 20px rgba(0,0,0,.1);
   color: #fff;
+  word-break: normal;
 }
 
 .row {
