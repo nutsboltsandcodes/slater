@@ -2117,8 +2117,8 @@ a.btn:hover {
 .index-excerpt {
 			margin-top: 0;
 			margin-bottom: 5px;
-			float: left;
-			width: 70%
+			width: 100%;
+			display: block
 	}
 	}
 
@@ -2135,6 +2135,10 @@ a.btn:hover {
 			width: 23%;
 			display: block
 	}
+	}
+
+small a {
+		font-size: inherit;
 	}
 
 .search-form {

@@ -13,8 +13,8 @@
 		@mixin atMedium {
 			margin-top: 0;
 			margin-bottom: 5px;
-			float: left;
-			width: 70%;
+			width: 100%;
+			display: block;
 		}
 	}
 
@@ -28,5 +28,11 @@
 			width: 23%;
 			display: block;
 		}
+	}
+}
+
+small {
+	& a {
+		font-size: inherit;
 	}
 }
