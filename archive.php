@@ -47,7 +47,7 @@ get_header(); ?>
 						?>		
 
 					
-						<p class="index-excerpt"><?php the_excerpt(); ?><!-- Post/Update date -->
+						<p class="index-excerpt"><?php echo get_the_excerpt(); ?><!-- Post/Update date -->
         		<?php get_template_part( 'template-parts/post', 'date' );?></p>
 
 					
