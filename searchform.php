@@ -4,5 +4,5 @@
             value="<?php echo get_search_query() ?>" name="s"
             title="<?php echo esc_attr_x( 'Search for:', 'none', 'slater' ) ?>" />
     	<input type="submit" class="search-submit"
-        value="<?php echo esc_attr_x( 'Search', 'none', 'submit button' ) ?>" />
+        value="<?php echo esc_attr_x( 'Search', 'none', 'slater' ) ?>" />
 </form>
