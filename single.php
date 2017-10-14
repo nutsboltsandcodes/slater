@@ -19,7 +19,7 @@
     <?php get_template_part( 'template-parts/post/post', 'hero' ); ?>
 
     <div class="container center-block">
-      <article class="article">
+      <article class="article" id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
         <div class="article__meta">
           <?php
             //Post Categories
