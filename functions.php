@@ -41,12 +41,13 @@ require get_template_directory() . '/inc/customizer/customizer-footer-settings.p
 */
 
 require get_template_directory() . '/inc/customizations/customizations-excerpt.php';
+require get_template_directory() . '/inc/customizations/customizaations-page-cat-sub-index.php';
 
 /**
 * Slater Customizations | Merlin Onboarding Wizard
 */
 
-require get_template_directory() .  '/inc/merlin/merlin.php';
-require get_template_directory() .  '/inc/merlin-config.php';
+// require get_template_directory() .  '/inc/merlin/merlin.php';
+// require get_template_directory() .  '/inc/merlin-config.php';
 
 ?>
